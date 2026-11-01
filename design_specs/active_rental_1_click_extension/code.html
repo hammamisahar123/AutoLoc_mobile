@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#d6e3fe", "primary": "#000000", "on-primary-fixed": "#0e1c2f", "on-tertiary-container": "#6886ae", "surface-container": "#e5eeff", "primary-container": "#0e1c2f", "error": "#ba1a1a", "tertiary-container": "#001c38", "surface-variant": "#d3e4fe", "surface-bright": "#f8f9ff", "background": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "secondary": "#785a00", "secondary-container": "#fec325", "surface-container-highest": "#d3e4fe", "on-secondary-container": "#6e5200", "surface-dim": "cbdbf5", "tertiary-fixed-dim": "#aac9f4", "on-error-container": "#93000a", "tertiary-fixed": "#d3e4ff", "primary-fixed-dim": "#bac7e1", "on-secondary-fixed-variant": "#5b4300", "outline-variant": "#c5c6cd", "secondary-fixed": "#ffdf9c", "on-surface": "#0b1c30", "on-error": "#ffffff", "on-surface-variant": "#44474c", "on-primary-container": "#77849c", "on-secondary-fixed": "#251a00", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#3a475c", "on-primary": "#ffffff", "surface-container-low": "#eff4ff", "outline": "#75777d", "secondary-fixed-dim": "#f7be1d", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "inverse-surface": "#213145", "tertiary": "#000000", "on-background": "#0b1c30", "on-tertiary-fixed-variant": "#29486d", "surface-tint": "#525f75", "surface-container-lowest": "#ffffff", "on-tertiary-fixed": "#001c38", "surface-container-high": "#dce9ff", "surface": "#f8f9ff", "inverse-primary": "#bac7e1" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-desktop": "3rem", "margin-tablet": "2rem", "gutter-tablet": "1.5rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter": "1rem", "margin": "1.25rem" }, fontFamily: { "body-lg": ["Plus Jakarta Sans"], "price-display": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, fontSize: { "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "price-display": ["22px", { lineHeight: "26px", letterSpacing: "-0.02em", fontWeight: "800" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-lg": ["24px", { lineHeight: "30px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-xl-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "800" }], "headline-md": ["20px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-xl": ["36px", { lineHeight: "44px", letterSpacing: "-0.03em", fontWeight: "800" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_4px_20px_-2px_rgba(11,25,44,0.04)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="AutoLoc Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXbrX0Leinav84jM-wDRTehrAW8ufFKF0ugXmUuabZycWf5xvD3f_XmGGkNVbNtbpGLzZp5_0KUjhEjYWByH-tYl1aE1awNK_DZWuUEl7kFmleW-i3YZU9-G3hYkd-1hJUS2bbmK9Fg7n2iZx8aqtzlw0gyWYdBHybbZ-7lKuyfp2BgfDVngiUw7diaGQ7QyX0M54uV3Dp6YzdWHCEXTzugQFcjIckNf9aH_9YiRgv"/><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase truncate">AutoLoc Concierge</span><button class="flex items-center gap-1 text-left min-w-0 group" type="button"><span class="material-symbols-outlined text-[16px] text-secondary-container flex-shrink-0">near_me</span><span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate group-hover:text-secondary transition-colors">Tunis-Carthage Airport (TUN)</span><span class="material-symbols-outlined text-[18px] text-outline flex-shrink-0">expand_more</span></button></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="relative flex items-center justify-center"><button class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-2 right-2 w-2.5 h-2.5 bg-secondary-container rounded-full ring-2 ring-surface-container-lowest"></span></div><button class="w-11 h-11 flex items-center justify-center" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_2px_6px_-1px_rgba(11,25,44,0.1)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvSDmu3FHrc4fCgU8P1D07h0m2_87Pg8SJFm5OWWidalPjXOLyXHnTigUYyicnpLifPz-FNK_tdcfRCfot9qhmNvj8TOhs9lXESsa6s_kT5ETmUiLPCfjk1zThJl5V7KY9G3y1ltEiAPoM5phj-I6ayTs_wMB7QvHUUT5wm8vvzWXcNYbG5aHMm2_Q03oGvALz5iSZnnIDd80k3QGd4onHnnAIBXzJN-f3iIe9xIMt"/></button></div></div></header><main class="flex-1 w-full bg-surface pt-20 pb-28"><div class="flex flex-col w-full px-margin space-y-space-md">
+<!-- Hero Active Vehicle Status Widget (Deep Midnight Navy Canvas) -->
+<section class="relative overflow-hidden rounded-xl bg-primary-container text-surface p-space-md shadow-xl">
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-space-md">
+<!-- Title, Tag & License Plate -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              ACTIVE RENTAL
+            </span>
+<span class="text-on-primary-container font-label-sm text-label-sm">#AL-8842</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-surface-bright tracking-tight truncate">Mercedes-Benz CLA Coupé</h2>
+<p class="font-body-sm text-body-sm text-on-primary-container">Edition 2024 • AMG Line Aero</p>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<div class="px-2.5 py-1 rounded bg-surface/10 backdrop-blur-md font-label-md text-label-md text-surface tracking-wider font-mono">
+            231 TN 14
+          </div>
+<span class="font-label-sm text-label-sm text-on-primary-container mt-1">Plate ID</span>
+</div>
+</div>
+<!-- Vehicle Image Display -->
+<div class="relative w-full h-32 rounded-lg overflow-hidden bg-gradient-to-b from-surface/5 to-transparent flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Sophisticated side profile of a metallic obsidian black Mercedes Benz CLA Coupé 2024 parked in a high-end luxury garage with ambient cinematic reflections and warm gold rim highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCHC514z99Le1tHSt4NqB7OYfrJ4Hhe7jUQqavcXKxJdZzwBCauPWj5XrQy_xqjeapoVWoah7UmV5LI7RGGLaxYCLLcLGfjbrclSuAiM31HLolGfmf8I_Wj-r1KrvAX0ZEDrR21ymkQLjBeYrbQLWvNv0CMmIdPu4r3Qs4lrHA2rMiIBeBFD9TfuwPPIwJOCN13T4QcNv7nPUkETbniwJ-96e3oVH0_RRm6QwiW3-3"/>
+</div>
+<!-- Countdown & Circular Gauge Visual -->
+<div class="grid grid-cols-12 gap-space-sm items-center p-space-sm rounded-lg bg-surface/5 backdrop-blur-sm">
+<div class="col-span-8 flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary-container tracking-wider uppercase font-bold">Remaining Duration</span>
+<div class="font-headline-lg text-headline-lg font-extrabold text-surface-bright tracking-tight mt-0.5">
+            2 Days, 4 Hours
+          </div>
+<div class="flex items-center gap-1 text-on-primary-container font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">event</span>
+<span class="truncate">Due: Fri, 18 Oct 2026 • 18:00</span>
+</div>
+</div>
+<!-- Circular Progress Ring (68% elapsed / remaining) -->
+<div class="col-span-4 flex justify-end items-center">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface/20" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-secondary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="72, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-surface-bright leading-none">72%</span>
+<span class="font-label-sm text-label-sm text-on-primary-container text-[9px]">TIME LEFT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Drop-off Location Strip -->
+<div class="flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-highest/10">
+<span class="material-symbols-outlined text-[18px] text-secondary-container flex-shrink-0">flight_takeoff</span>
+<div class="min-w-0 flex-1">
+<p class="font-label-sm text-label-sm text-on-primary-container truncate uppercase">Drop-Off Point</p>
+<p class="font-label-md text-label-md text-surface-bright font-semibold truncate">Tunis-Carthage Airport (Terminal 1 VIP Desk)</p>
+</div>
+<button class="p-1 rounded-full text-secondary-container hover:bg-surface/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Live Vehicle Telematics & Diagnostics Deck -->
+<section class="flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Vehicle Telematics</h3>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Synced 1m ago</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Fuel & Range Tile -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Fuel Status</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg font-extrabold text-on-surface">78%</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Optimal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Est. 520 km range</p>
+<!-- Fuel Gauge Bar -->
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+</div>
+<!-- Total Distance Driven Tile -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">Odometer</span>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg font-extrabold text-on-surface">312</span>
+<span class="font-label-md text-label-md text-on-surface-variant">km</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Driven this trip</p>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm mt-2">
+<span class="material-symbols-outlined text-[14px]">all_inclusive</span>
+<span>Unlimited Plan</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Digital Key Connectivity Card with Lock/Unlock Controls -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-md flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Smart Keyless Go</span>
+<div class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Connected via Bluetooth 5.2</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">Active</span>
+</div>
+<!-- Quick Action Controls -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface transition-all active:scale-95" id="btnLock" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-label-md text-label-md font-bold">Lock Doors</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface transition-all active:scale-95" id="btnUnlock" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+<span class="font-label-md text-label-md font-bold">Unlock Doors</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 1-Click Rental Extension Feature Card -->
+<section class="rounded-xl bg-surface-container-lowest shadow-lg p-space-md flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">update</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">Need more time?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Extend your rental seamlessly in 1-click</p>
+</div>
+</div>
+</div>
+<!-- Duration Pills Selection -->
+<div class="flex flex-col space-y-space-xs mt-1" id="extensionOptions">
+<!-- Option 1: Selected by default -->
+<label class="extension-pill relative flex items-center justify-between p-3 rounded-xl bg-secondary-container text-on-secondary-container cursor-pointer transition-all shadow-sm">
+<input checked="" class="sr-only" name="extension_duration" type="radio" value="24h"/>
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded-full bg-on-secondary-container flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary-container"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">+24 Hours (1 Day)</span>
+<span class="font-label-sm text-label-sm opacity-80">Extended until Sat 18:00</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-price-display text-price-display font-extrabold text-on-secondary-container">240 TND</span>
+<span class="font-label-sm text-label-sm opacity-80">Standard Rate</span>
+</div>
+</label>
+<!-- Option 2: 48 Hours with Savings -->
+<label class="extension-pill relative flex items-center justify-between p-3 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container cursor-pointer transition-all">
+<input class="sr-only" name="extension_duration" type="radio" value="48h"/>
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded-full bg-surface-variant flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest hidden radio-inner"></div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">+48 Hours (2 Days)</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold">SAVE 30 TND</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Extended until Sun 18:00</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">450 TND</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant line-through">480 TND</span>
+</div>
+</label>
+<!-- Option 3: 3 Days VIP Weekend -->
+<label class="extension-pill relative flex items-center justify-between p-3 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container cursor-pointer transition-all">
+<input class="sr-only" name="extension_duration" type="radio" value="72h"/>
+<div class="flex items-center gap-2.5">
+<div class="w-4 h-4 rounded-full bg-surface-variant flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest hidden radio-inner"></div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">+3 Days (VIP Weekend)</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-surface-bright font-label-sm text-label-sm font-bold">BEST VALUE</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Extended until Mon 18:00</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">650 TND</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Save 70 TND</span>
+</div>
+</label>
+</div>
+<!-- 1-Click Instant CTA -->
+<button class="w-full mt-2 py-3 px-4 rounded-xl bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-98 transition-all" id="extendCtaBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span id="extendBtnText">Extend Rental Now (+24h)</span>
+</button>
+<div class="flex items-center justify-center gap-1.5 text-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+<span>Instant card charge with current payment method ending in •• 9042</span>
+</div>
+</section>
+<!-- Essential Roadside Assistance & Document Services Grid -->
+<section class="flex flex-col space-y-space-xs pb-4">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface px-1">Concierge &amp; Assistance</h3>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- 24/7 Roadside Assistance (SOS) -->
+<a class="p-space-sm rounded-xl bg-error-container text-on-error-container shadow-md flex flex-col justify-between hover:opacity-95 transition-opacity relative overflow-hidden group" href="tel:198">
+<div class="flex items-center justify-between mb-3">
+<div class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+</div>
+<span class="flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-error"></span>
+</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-extrabold text-on-error-container leading-tight">24/7 Roadside SOS</div>
+<p class="font-body-sm text-body-sm text-on-error-container/80 mt-0.5">Immediate VIP dispatch</p>
+</div>
+</a>
+<!-- Download PDF Contract & Receipt -->
+<button class="p-space-sm rounded-xl bg-surface-container-lowest text-on-surface shadow-md flex flex-col justify-between hover:bg-surface-container-low transition-colors text-left" type="button">
+<div class="flex items-center justify-between mb-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">download</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface leading-tight">Rental Contract</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">PDF &amp; Digital Receipt</p>
+</div>
+</button>
+<!-- Report Incident or Dent -->
+<button class="p-space-sm rounded-xl bg-surface-container-lowest text-on-surface shadow-md flex flex-col justify-between hover:bg-surface-container-low transition-colors text-left" type="button">
+<div class="flex items-center justify-between mb-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">chevron_right</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface leading-tight">Report Incident</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Log scratch or damage</p>
+</div>
+</button>
+<!-- Find Nearest Petrol Station -->
+<button class="p-space-sm rounded-xl bg-surface-container-lowest text-on-surface shadow-md flex flex-col justify-between hover:bg-surface-container-low transition-colors text-left" type="button">
+<div class="flex items-center justify-between mb-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">local_gas_station</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">near_me</span>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface leading-tight">Fuel Stations</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Shell / Total near TUN</p>
+</div>
+</button>
+</div>
+</section>
+</div>
+<script>
+  // Dynamic selection logic for 1-Click Extension
+  document.querySelectorAll('input[name="extension_duration"]').forEach((radio) => {
+    radio.addEventListener('change', (e) => {
+      const pills = document.querySelectorAll('.extension-pill');
+      pills.forEach((pill) => {
+        pill.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'shadow-sm');
+        pill.classList.add('bg-surface-container-low', 'text-on-surface');
+      });
+
+      const parentPill = e.target.closest('.extension-pill');
+      if (parentPill) {
+        parentPill.classList.remove('bg-surface-container-low', 'text-on-surface');
+        parentPill.classList.add('bg-secondary-container', 'text-on-secondary-container', 'shadow-sm');
+      }
+
+      const ctaText = document.getElementById('extendBtnText');
+      if (e.target.value === '24h') {
+        ctaText.textContent = 'Extend Rental Now (+24h)';
+      } else if (e.target.value === '48h') {
+        ctaText.textContent = 'Extend Rental Now (+48h • 450 TND)';
+      } else if (e.target.value === '72h') {
+        ctaText.textContent = 'Extend Rental Now (+3 Days • 650 TND)';
+      }
+    });
+  });
+
+  // Micro-interactions for Keyless Go
+  const btnLock = document.getElementById('btnLock');
+  const btnUnlock = document.getElementById('btnUnlock');
+
+  btnLock.addEventListener('click', () => {
+    btnLock.classList.add('bg-primary-container', 'text-surface-bright');
+    btnUnlock.classList.remove('bg-primary-container', 'text-surface-bright');
+    setTimeout(() => {
+      btnLock.classList.remove('bg-primary-container', 'text-surface-bright');
+    }, 1500);
+  });
+
+  btnUnlock.addEventListener('click', () => {
+    btnUnlock.classList.add('bg-primary-container', 'text-surface-bright');
+    btnLock.classList.remove('bg-primary-container', 'text-surface-bright');
+    setTimeout(() => {
+      btnUnlock.classList.remove('bg-primary-container', 'text-surface-bright');
+    }, 1500);
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe pointer-events-none px-margin mb-3" data-active-classes="text-secondary-container"><div class="pointer-events-auto mx-auto max-w-md h-16 rounded-[28px] bg-primary-container/95 backdrop-blur-2xl shadow-[0_20px_40px_-8px_rgba(11,25,44,0.35)] flex items-center justify-around px-2"><a class="flex flex-col items-center justify-center w-14 h-12 text-on-primary-container transition-all group" data-path="explore" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">directions_car</span><span class="font-label-sm text-label-sm mt-0.5">Explore</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-primary-container transition-all group" data-path="inspection" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">verified_user</span><span class="font-label-sm text-label-sm mt-0.5">Inspect</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-primary-container transition-all group" data-path="delivery" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">fmd_good</span><span class="font-label-sm text-label-sm mt-0.5">Delivery</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-primary-container transition-all group" data-path="contract" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">history_edu</span><span class="font-label-sm text-label-sm mt-0.5">Contract</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 transition-all group text-secondary-container" data-path="my-rental" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">speed</span><span class="font-label-sm text-label-sm mt-0.5">Rental</span></a></div></nav></body></html>

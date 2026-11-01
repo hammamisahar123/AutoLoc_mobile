@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#d6e3fe", "primary": "#000000", "on-primary-fixed": "#0e1c2f", "on-tertiary-container": "#6886ae", "surface-container": "#e5eeff", "primary-container": "#0e1c2f", "error": "#ba1a1a", "tertiary-container": "#001c38", "surface-variant": "#d3e4fe", "surface-bright": "#f8f9ff", "background": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "secondary": "#785a00", "secondary-container": "#fec325", "surface-container-highest": "#d3e4fe", "on-secondary-container": "#6e5200", "surface-dim": "cbdbf5", "tertiary-fixed-dim": "#aac9f4", "on-error-container": "#93000a", "tertiary-fixed": "#d3e4ff", "primary-fixed-dim": "#bac7e1", "on-secondary-fixed-variant": "#5b4300", "outline-variant": "#c5c6cd", "secondary-fixed": "#ffdf9c", "on-surface": "#0b1c30", "on-error": "#ffffff", "on-surface-variant": "#44474c", "on-primary-container": "#77849c", "on-secondary-fixed": "#251a00", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#3a475c", "on-primary": "#ffffff", "surface-container-low": "#eff4ff", "outline": "#75777d", "secondary-fixed-dim": "#f7be1d", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "inverse-surface": "#213145", "tertiary": "#000000", "on-background": "#0b1c30", "on-tertiary-fixed-variant": "#29486d", "surface-tint": "#525f75", "surface-container-lowest": "#ffffff", "on-tertiary-fixed": "#001c38", "surface-container-high": "#dce9ff", "surface": "#f8f9ff", "inverse-primary": "#bac7e1" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-desktop": "3rem", "margin-tablet": "2rem", "gutter-tablet": "1.5rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter": "1rem", "margin": "1.25rem" }, fontFamily: { "body-lg": ["Plus Jakarta Sans"], "price-display": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, fontSize: { "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "price-display": ["22px", { lineHeight: "26px", letterSpacing: "-0.02em", fontWeight: "800" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-lg": ["24px", { lineHeight: "30px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-xl-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "800" }], "headline-md": ["20px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-xl": ["36px", { lineHeight: "44px", letterSpacing: "-0.03em", fontWeight: "800" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_4px_20px_-2px_rgba(11,25,44,0.04)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="AutoLoc Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXbrX0Leinav84jM-wDRTehrAW8ufFKF0ugXmUuabZycWf5xvD3f_XmGGkNVbNtbpGLzZp5_0KUjhEjYWByH-tYl1aE1awNK_DZWuUEl7kFmleW-i3YZU9-G3hYkd-1hJUS2bbmK9Fg7n2iZx8aqtzlw0gyWYdBHybbZ-7lKuyfp2BgfDVngiUw7diaGQ7QyX0M54uV3Dp6YzdWHCEXTzugQFcjIckNf9aH_9YiRgv"/><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-secondary tracking-wider uppercase truncate">AutoLoc Concierge</span><button class="flex items-center gap-1 text-left min-w-0 group" type="button"><span class="material-symbols-outlined text-[16px] text-secondary-container flex-shrink-0">near_me</span><span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate group-hover:text-secondary transition-colors">Tunis-Carthage Airport (TUN)</span><span class="material-symbols-outlined text-[18px] text-outline flex-shrink-0">expand_more</span></button></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="relative flex items-center justify-center"><button class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-2 right-2 w-2.5 h-2.5 bg-secondary-container rounded-full ring-2 ring-surface-container-lowest"></span></div><button class="w-11 h-11 flex items-center justify-center" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_2px_6px_-1px_rgba(11,25,44,0.1)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvSDmu3FHrc4fCgU8P1D07h0m2_87Pg8SJFm5OWWidalPjXOLyXHnTigUYyicnpLifPz-FNK_tdcfRCfot9qhmNvj8TOhs9lXESsa6s_kT5ETmUiLPCfjk1zThJl5V7KY9G3y1ltEiAPoM5phj-I6ayTs_wMB7QvHUUT5wm8vvzWXcNYbG5aHMm2_Q03oGvALz5iSZnnIDd80k3QGd4onHnnAIBXzJN-f3iIe9xIMt"/></button></div></div></header><main class="flex-1 w-full bg-surface pt-20 pb-28"><div class="flex flex-col w-full px-margin pb-6 gap-space-md">
+<!-- Top Protocol Context Card -->
+<div class="flex flex-col bg-surface-container-lowest p-space-md rounded-xl shadow-sm gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-tertiary-container font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+        Step 1 of 2: Check-in Protocol
+      </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>
+        LIVE SESSION
+      </span>
+</div>
+<div class="flex flex-col mt-1">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Pre-Rental Digital Inspection</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+        Verify the vehicle condition to guarantee a 100% deposit refund with zero dispute.
+      </p>
+</div>
+<!-- Vehicle metadata badge -->
+<div class="flex items-center justify-between mt-2 pt-2 bg-surface-container-low px-3 py-2 rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0">directions_car</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Peugeot 3008 GT</span>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0 bg-surface-container-lowest px-2 py-1 rounded-md shadow-xs">
+<span class="material-symbols-outlined text-[14px] text-outline">pin</span>
+<span class="font-label-md text-label-md font-bold text-on-surface tracking-wider">245 TN 89</span>
+</div>
+</div>
+</div>
+<!-- Interactive Blueprint Diagram -->
+<div class="relative w-full rounded-xl bg-primary-container p-4 shadow-md overflow-hidden text-on-primary">
+<!-- Subtle Blueprint Grid Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, #bac7e1 1px, transparent 1px); background-size: 16px 16px;"></div>
+<div class="relative z-10 flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">deployed_code</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed-dim">3D Hotspot Telemetry</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-fixed bg-on-primary-fixed-variant/50 px-2 py-0.5 rounded-full">
+        2 / 4 Verified
+      </span>
+</div>
+<!-- Car Blueprint Stage -->
+<div class="relative w-full h-56 flex items-center justify-center">
+<!-- Vector Isometric Car Silhouette -->
+<svg class="w-full h-full max-h-52 drop-shadow-[0_10px_20px_rgba(0,0,0,0.45)]" fill="none" viewbox="0 0 340 180" xmlns="http://www.w3.org/2000/svg">
+<!-- Chassis base shadow -->
+<ellipse cx="170" cy="148" fill="#000000" fill-opacity="0.45" rx="140" ry="24"></ellipse>
+<!-- Lower Body Contour -->
+<path d="M45 130 C75 140 265 140 295 130 C305 125 310 110 300 98 C285 80 245 74 215 72 C195 52 165 48 115 50 C80 54 60 76 42 94 C34 104 36 122 45 130 Z" fill="#14243B"></path>
+<!-- Roofline and Glass canopy -->
+<path d="M105 76 C125 56 160 54 205 56 C220 57 232 68 238 75 C215 77 150 77 105 76 Z" fill="#3A475C" fill-opacity="0.6"></path>
+<path d="M72 88 C85 76 102 70 120 68 L108 88 Z" fill="#6886AE" fill-opacity="0.4"></path>
+<!-- Hood & Headlight lines -->
+<path d="M42 98 L85 106 M40 112 L78 118" opacity="0.6" stroke="#6886AE" stroke-linecap="round" stroke-width="1.5"></path>
+<!-- Wheel arches & Rims -->
+<ellipse cx="90" cy="132" fill="#0B1626" rx="22" ry="18"></ellipse>
+<circle cx="90" cy="132" fill="#1E2F47" r="12" stroke="#F1B814" stroke-dasharray="2 3" stroke-width="1.5"></circle>
+<ellipse cx="250" cy="130" fill="#0B1626" rx="22" ry="18"></ellipse>
+<circle cx="250" cy="130" fill="#1E2F47" r="12" stroke="#6886AE" stroke-width="1.5"></circle>
+<!-- Futuristic Laser Grid Line across scan axis -->
+<line opacity="0.4" stroke="#F1B814" stroke-dasharray="4 6" stroke-width="1" x1="16" x2="324" y1="110" y2="110"></line>
+</svg>
+<!-- Hotspot 1: Front Bumper & Hood (Checked) -->
+<button class="absolute left-10 top-16 group flex flex-col items-center focus:outline-none" onclick="selectHotspot(1)" type="button">
+<div class="relative flex items-center justify-center w-7 h-7 rounded-full bg-surface-container-lowest text-on-surface shadow-md ring-2 ring-emerald-500">
+<span class="material-symbols-outlined text-[16px] text-emerald-600 font-bold">check</span>
+</div>
+<div class="mt-1 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 backdrop-blur-md shadow-xs text-center">
+<p class="font-label-sm text-label-sm text-on-surface font-bold">Hood • 10:14</p>
+</div>
+</button>
+<!-- Hotspot 2: Left Doors & Alloy Rims (Active Required) -->
+<button class="absolute left-[38%] bottom-6 group flex flex-col items-center focus:outline-none z-20" onclick="selectHotspot(2)" type="button">
+<div class="relative flex items-center justify-center">
+<span class="absolute -inset-1.5 rounded-full bg-secondary-container/40 animate-ping"></span>
+<div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container shadow-lg">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</div>
+</div>
+<div class="mt-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-md">
+          Action Needed
+        </div>
+</button>
+<!-- Hotspot 3: Rear Bumper & Trunk (Pending) -->
+<button class="absolute right-8 top-16 group flex flex-col items-center focus:outline-none opacity-80 hover:opacity-100 transition-opacity" onclick="selectHotspot(3)" type="button">
+<div class="flex items-center justify-center w-7 h-7 rounded-full bg-primary-container text-primary-fixed-dim shadow-sm ring-1 ring-outline-variant">
+<span class="material-symbols-outlined text-[15px]">hourglass_empty</span>
+</div>
+<div class="mt-1 px-1.5 py-0.5 rounded bg-on-primary-fixed-variant/80 backdrop-blur-md text-center">
+<p class="font-label-sm text-label-sm text-primary-fixed font-medium">Rear Pending</p>
+</div>
+</button>
+<!-- Hotspot 4: Interior & Cockpit (Telemetry pill) -->
+<button class="absolute top-3 right-1/3 group flex items-center gap-1 px-2 py-1 rounded-full bg-on-tertiary-container/40 backdrop-blur-md text-surface-bright focus:outline-none" onclick="selectHotspot(4)" type="button">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">speed</span>
+<span class="font-label-sm text-label-sm font-semibold">18,420 KM • 100% Fuel</span>
+</button>
+</div>
+<!-- Hotspot Navigation Bar Tabs -->
+<div class="grid grid-cols-4 gap-1.5 pt-2 border-t border-on-primary-fixed-variant/20">
+<div class="flex flex-col items-center py-1 rounded bg-on-primary-fixed-variant/30">
+<span class="font-label-sm text-label-sm text-emerald-400 font-bold">Front</span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Done</span>
+</div>
+<div class="flex flex-col items-center py-1 rounded bg-secondary-container text-on-secondary-container">
+<span class="font-label-sm text-label-sm font-bold">Left Side</span>
+<span class="font-label-sm text-label-sm uppercase font-black">Active</span>
+</div>
+<div class="flex flex-col items-center py-1 rounded bg-on-primary-fixed-variant/30">
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">Rear</span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Next</span>
+</div>
+<div class="flex flex-col items-center py-1 rounded bg-on-primary-fixed-variant/30">
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">Cockpit</span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Synced</span>
+</div>
+</div>
+</div>
+<!-- Active Inspection Card Focus: Left Doors & Alloy Rims -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl shadow-md p-space-md gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">panorama_horizontal</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Side Profile &amp; Alloy Rims</h2>
+<p class="font-label-sm text-label-sm text-secondary font-bold uppercase">Zone 2: Left Body Panel</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">info</span>
+</div>
+<!-- Instruction Strip -->
+<div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">center_focus_strong</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Stand 2 meters back and align the full side body inside the camera guide box. Ensure wheels are straight.
+      </p>
+</div>
+<!-- Thumbnail Previews (Grid) -->
+<div class="grid grid-cols-2 gap-3 mt-1">
+<!-- Thumbnail 1: Saved Rim Shot -->
+<div class="relative flex flex-col rounded-lg overflow-hidden bg-surface-container-high aspect-[4/3] group shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Close-up inspection photograph of a luxury modern Peugeot 3008 GT dark grey diamond cut alloy wheel rim showing tire tread in pristine condition under bright morning sun at Tunis airport terminal parking, high detail automotive documentation aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDmNqXH1EE9zpcJfzCDEs-_qCTWAzaAnD_82LkLm11qWMRTmDa4OjN1lsuMyUkZTKt6gFMruvvzKHsYgMmL7HsxgBlIzYDPNEj4Lz6pl4Fv6QakqpowFnpCNquIi3wM0VCMl6b3vdXMRg3pzgBtWRlLG5rkEcwm_wq2O69Cl03aGe3CYJ3Q__f1iXVHGHXBsMD_YwxaryhC4EeDAouPT_vtKPDi-agg-sVO0ee6DXh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-2 text-on-primary">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-white flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-emerald-400">check_circle</span>
+              Rim Front Left
+            </span>
+<span class="material-symbols-outlined text-[14px] text-white/80">zoom_in</span>
+</div>
+</div>
+<span class="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 font-label-sm text-label-sm text-on-surface font-bold">
+          Saved
+        </span>
+</div>
+<!-- Thumbnail 2: Pending Camera Placeholder -->
+<button class="relative flex flex-col items-center justify-center rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors aspect-[4/3] p-2 text-center group" onclick="triggerCamera()" type="button">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-sm group-hover:scale-105 transition-transform mb-1">
+<span class="material-symbols-outlined text-[20px]">add_a_photo</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Door Panels</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tap to capture</span>
+</button>
+</div>
+<!-- Real-time Timestamp Watermark Telemetry Preview -->
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-highest/60 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary flex-shrink-0">satellite_alt</span>
+<div class="flex flex-col min-w-0">
+<span class="font-bold text-on-surface truncate">GPS Verified: TUN Airport P2 • Slot C-14</span>
+<span class="text-on-surface-variant font-mono">14/10/2026 10:15:32 UTC+1 • Hash: #8F90C-PEUG</span>
+</div>
+</div>
+</div>
+<!-- Guarantee & Peace of Mind Banner -->
+<div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high/70 shadow-xs">
+<div class="w-9 h-9 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary flex-shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-label-md text-label-md font-bold text-on-surface">100% Deposit Guarantee</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Our AI timestamp and LIDAR mesh verification protects your pre-authorized security deposit against false claims.
+      </p>
+</div>
+</div>
+<!-- Floating Sticky Action Trigger Tray -->
+<div class="flex flex-col gap-2 mt-1">
+<button class="w-full h-14 rounded-xl bg-secondary-container hover:bg-secondary-fixed-dim active:scale-[0.99] transition-all flex items-center justify-center gap-2 shadow-md text-on-secondary-container font-label-lg text-label-lg uppercase tracking-wider" onclick="triggerCamera()" type="button">
+<span class="material-symbols-outlined text-[22px]">photo_camera</span>
+      Open AI Inspection Camera
+    </button>
+<button class="w-full h-11 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-colors flex items-center justify-center gap-1.5 text-on-surface font-label-md text-label-md" type="button">
+<span>Skip to Interior Inspection</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+  function selectHotspot(index) {
+    const titles = {
+      1: "Front Bumper & Hood (Verified)",
+      2: "Side Profile & Alloy Rims (Active)",
+      3: "Rear Bumper & Trunk Deck (Pending)",
+      4: "Digital Cockpit & Odometry (Telemetry Synced)"
+    };
+    if (window.navigator && window.navigator.vibrate) {
+      window.navigator.vibrate(25);
+    }
+  }
+
+  function triggerCamera() {
+    if (window.navigator && window.navigator.vibrate) {
+      window.navigator.vibrate([30, 50, 30]);
+    }
+    const button = event.currentTarget;
+    button.classList.add('opacity-80');
+    setTimeout(() => button.classList.remove('opacity-80'), 200);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe pointer-events-none px-margin mb-3" data-active-classes="text-secondary-container"><div class="pointer-events-auto mx-auto max-w-md h-16 rounded-[28px] bg-primary-container/95 backdrop-blur-2xl shadow-[0_20px_40px_-8px_rgba(11,25,44,0.35)] flex items-center justify-around px-2"><a class="flex flex-col items-center justify-center w-14 h-12 text-on-primary-container transition-all group" data-path="explore" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">directions_car</span><span class="font-label-sm text-label-sm mt-0.5">Explore</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 transition-all group text-secondary-container" data-path="inspection" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">verified_user</span><span class="font-label-sm text-label-sm mt-0.5">Inspect</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-primary-container transition-all group" data-path="delivery" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">fmd_good</span><span class="font-label-sm text-label-sm mt-0.5">Delivery</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-primary-container transition-all group" data-path="contract" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">history_edu</span><span class="font-label-sm text-label-sm mt-0.5">Contract</span></a><a class="flex flex-col items-center justify-center w-14 h-12 text-on-primary-container transition-all group" data-path="my-rental" href="#"><span class="material-symbols-outlined text-[22px] group-hover:scale-105 transition-transform">speed</span><span class="font-label-sm text-label-sm mt-0.5">Rental</span></a></div></nav></body></html>

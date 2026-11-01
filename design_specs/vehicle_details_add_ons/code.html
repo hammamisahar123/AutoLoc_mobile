@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#d6e3fe", "primary": "#000000", "on-primary-fixed": "#0e1c2f", "on-tertiary-container": "#6886ae", "surface-container": "#e5eeff", "primary-container": "#0e1c2f", "error": "#ba1a1a", "tertiary-container": "#001c38", "surface-variant": "#d3e4fe", "surface-bright": "#f8f9ff", "background": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "secondary": "#785a00", "secondary-container": "#fec325", "surface-container-highest": "#d3e4fe", "on-secondary-container": "#6e5200", "surface-dim": "cbdbf5", "tertiary-fixed-dim": "#aac9f4", "on-error-container": "#93000a", "tertiary-fixed": "#d3e4ff", "primary-fixed-dim": "#bac7e1", "on-secondary-fixed-variant": "#5b4300", "outline-variant": "#c5c6cd", "secondary-fixed": "#ffdf9c", "on-surface": "#0b1c30", "on-error": "#ffffff", "on-surface-variant": "#44474c", "on-primary-container": "#77849c", "on-secondary-fixed": "#251a00", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#3a475c", "on-primary": "#ffffff", "surface-container-low": "#eff4ff", "outline": "#75777d", "secondary-fixed-dim": "#f7be1d", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "inverse-surface": "#213145", "tertiary": "#000000", "on-background": "#0b1c30", "on-tertiary-fixed-variant": "#29486d", "surface-tint": "#525f75", "surface-container-lowest": "#ffffff", "on-tertiary-fixed": "#001c38", "surface-container-high": "#dce9ff", "surface": "#f8f9ff", "inverse-primary": "#bac7e1" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-desktop": "3rem", "margin-tablet": "2rem", "gutter-tablet": "1.5rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter": "1rem", "margin": "1.25rem" }, fontFamily: { "body-lg": ["Plus Jakarta Sans"], "price-display": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, fontSize: { "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "price-display": ["22px", { lineHeight: "26px", letterSpacing: "-0.02em", fontWeight: "800" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.05em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-lg": ["24px", { lineHeight: "30px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-xl-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "800" }], "headline-md": ["20px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-xl": ["36px", { lineHeight: "44px", letterSpacing: "-0.03em", fontWeight: "800" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_4px_20px_-2px_rgba(11,25,44,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><img alt="AutoLoc Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXbrX0Leinav84jM-wDRTehrAW8ufFKF0ugXmUuabZycWf5xvD3f_XmGGkNVbNtbpGLzZp5_0KUjhEjYWByH-tYl1aE1awNK_DZWuUEl7kFmleW-i3YZU9-G3hYkd-1hJUS2bbmK9Fg7n2iZx8aqtzlw0gyWYdBHybbZ-7lKuyfp2BgfDVngiUw7diaGQ7QyX0M54uV3Dp6YzdWHCEXTzugQFcjIckNf9aH_9YiRgv"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate font-bold">Vehicle Details</h1></div><div class="flex items-center gap-space-xs flex-shrink-0"><button class="w-11 h-11 flex items-center justify-center" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_2px_6px_-1px_rgba(11,25,44,0.1)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvSDmu3FHrc4fCgU8P1D07h0m2_87Pg8SJFm5OWWidalPjXOLyXHnTigUYyicnpLifPz-FNK_tdcfRCfot9qhmNvj8TOhs9lXESsa6s_kT5ETmUiLPCfjk1zThJl5V7KY9G3y1ltEiAPoM5phj-I6ayTs_wMB7QvHUUT5wm8vvzWXcNYbG5aHMm2_Q03oGvALz5iSZnnIDd80k3QGd4onHnnAIBXzJN-f3iIe9xIMt"/></button></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-safe"><div class="flex flex-col w-full pb-32">
+<!-- Vehicle Gallery Showcase -->
+<section class="relative w-full bg-surface-container-low overflow-hidden">
+<div class="relative w-full aspect-[16/10] max-h-72">
+<img class="w-full h-full object-cover" data-alt="Sleek 2024 Mercedes-Benz CLA Coupé AMG Line finished in metallic mountain grey parked inside a minimalist high-end architectural pavilion. Soft diffused natural morning lighting accentuates the dynamic coupe roofline, aerodynamic silver multispoke alloy wheels, and signature starlight radiator grille. Clean luxury automotive commercial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtVQK8csjiU_tDvruEcGgZhnyAFQuHqZ0zkI5ltjkiTVSRE6VpciLIMGSyR_C9jUU5Pl8gyfBCjxSd6vhI2RXIsx_GlLQSGigqgVv069Hwjek5KdRvzxW77xTxBox9rLYQBQOHJMhx4ypKvIdVw5A--CZ442YY1uFEj--jCW4yahG4m2T0s7YgQKcrD24YqGLVZJbn_w37o-OqCEcJen4NzF8w2AfPyV-MJlcJQEar"/>
+<!-- Soft ambient gradient scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/60 via-transparent to-transparent"></div>
+<!-- Floating Concierge Badge -->
+<div class="absolute top-4 left-4 flex items-center gap-1.5 bg-primary-container/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md text-on-primary">
+<span class="material-symbols-outlined text-[16px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-surface-bright">VIP Concierge Handover</span>
+</div>
+<!-- Top Right Favorite Action -->
+<button aria-label="Save to favorites" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface shadow-sm active:scale-95 transition-transform" id="fav-btn" onclick="toggleFavorite(this)" type="button">
+<span class="material-symbols-outlined text-[20px] transition-colors" id="fav-icon">favorite</span>
+</button>
+<!-- Carousel Pagination Controls -->
+<div class="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-1.5 pointer-events-none">
+<span class="w-6 h-1.5 rounded-full bg-secondary-container transition-all"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest/60"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest/60"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest/60"></span>
+</div>
+</div>
+</section>
+<!-- Main Vehicle Information -->
+<section class="px-margin pt-5 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-high text-on-surface px-2.5 py-0.5 rounded-full font-label-sm text-label-sm uppercase">
+        Luxury / Berline
+      </span>
+<span class="bg-primary text-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold">
+        AMG Line
+      </span>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+        Mercedes-Benz CLA 200 Coupé
+      </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        2024 Edition • Obsidian Metallic Aero Package
+      </p>
+</div>
+<!-- Rating & Flexibility Strip -->
+<div class="flex items-center flex-wrap gap-x-3 gap-y-1.5 pt-1">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg font-bold">4.98</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(42 reviews)</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>Free cancellation up to 24h</span>
+</div>
+</div>
+</section>
+<!-- Technical Specs Bento -->
+<section class="px-margin mt-6">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+        Vehicle Specifications
+      </h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Factory Spec</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Spec 1: Transmission -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface mb-2">
+<span class="material-symbols-outlined text-[20px]">swap_driving_apps_wheel</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Transmission</span>
+<p class="font-label-lg text-label-lg text-on-surface mt-0.5">7G-DCT Auto</p>
+</div>
+</div>
+<!-- Spec 2: Engine -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface mb-2">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Engine</span>
+<p class="font-label-lg text-label-lg text-on-surface mt-0.5">1.3L Turbo (163 hp)</p>
+</div>
+</div>
+<!-- Spec 3: Trunk -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface mb-2">
+<span class="material-symbols-outlined text-[20px]">luggage</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Luggage Trunk</span>
+<p class="font-label-lg text-label-lg text-on-surface mt-0.5">460 L (3 Cases)</p>
+</div>
+</div>
+<!-- Spec 4: Mileage -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-8 h-8 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined text-[20px]">all_inclusive</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase block">Mileage</span>
+<p class="font-label-lg text-label-lg text-on-surface mt-0.5">Unlimited KM</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Concierge Delivery Details Location Card -->
+<section class="px-margin mt-6">
+<div class="bg-primary-container text-on-primary rounded-xl p-4 shadow-sm flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest/10 flex items-center justify-center flex-shrink-0 text-secondary-container mt-0.5">
+<span class="material-symbols-outlined text-[22px]">flight_land</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-container">Delivery &amp; Pickup Hub</span>
+</div>
+<p class="font-label-lg text-label-lg text-surface-bright mt-0.5 leading-snug">
+          Tunis-Carthage Airport (TUN)
+        </p>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-1">
+          Terminal 1 Arrival Lounge with VIP Personal Concierge key handover.
+        </p>
+</div>
+</div>
+</section>
+<!-- Digital Add-ons & Equipment Section -->
+<section class="px-margin mt-7">
+<div class="flex items-center justify-between mb-3">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+          Digital Add-ons &amp; Services
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Personalize your luxury driving experience
+        </p>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full text-on-surface">
+        Daily Rates
+      </span>
+</div>
+<div class="flex flex-col gap-2.5" id="addons-list">
+<!-- Add-on 1: Zero-Deductible Insurance (Pre-selected) -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center justify-between cursor-pointer transition-all active:scale-[0.99] bg-gradient-to-r from-surface-container-lowest to-secondary-container/10" id="addon-card-1" onclick="toggleAddon('addon-check-1', 35, 'addon-card-1')">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">shield_lock</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Zero-Deductible Insurance</span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-1.5 py-0.2 rounded">Recommended</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Franchise 0 TND full liability coverage
+            </p>
+<p class="font-label-md text-label-md text-secondary font-bold mt-1">
+              +35 TND <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ day</span>
+</p>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<input checked="" class="hidden" data-rate="35" id="addon-check-1" onclick="event.stopPropagation()" type="checkbox"/>
+<div class="w-6 h-6 rounded-md bg-primary flex items-center justify-center text-secondary-container" id="addon-box-1">
+<span class="material-symbols-outlined text-[18px] font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- Add-on 2: Live GPS Navigation & 4G Wi-Fi (Pre-selected) -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center justify-between cursor-pointer transition-all active:scale-[0.99]" id="addon-card-2" onclick="toggleAddon('addon-check-2', 15, 'addon-card-2')">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">wifi_tethering</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate block">Live GPS &amp; 4G Wi-Fi Hotspot</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              High-speed in-cabin multi-device router
+            </p>
+<p class="font-label-md text-label-md text-secondary font-bold mt-1">
+              +15 TND <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ day</span>
+</p>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<input checked="" class="hidden" data-rate="15" id="addon-check-2" onclick="event.stopPropagation()" type="checkbox"/>
+<div class="w-6 h-6 rounded-md bg-primary flex items-center justify-center text-secondary-container" id="addon-box-2">
+<span class="material-symbols-outlined text-[18px] font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- Add-on 3: Isofix Child Seat (Unchecked) -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center justify-between cursor-pointer transition-all active:scale-[0.99]" id="addon-card-3" onclick="toggleAddon('addon-check-3', 20, 'addon-card-3')">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">child_friendly</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate block">Isofix Child / Baby Seat</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Certified ergonomic safety restraint
+            </p>
+<p class="font-label-md text-label-md text-secondary font-bold mt-1">
+              +20 TND <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ day</span>
+</p>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<input class="hidden" data-rate="20" id="addon-check-3" onclick="event.stopPropagation()" type="checkbox"/>
+<div class="w-6 h-6 rounded-md bg-surface-container flex items-center justify-center text-transparent" id="addon-box-3">
+<span class="material-symbols-outlined text-[18px] font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- Add-on 4: Additional Certified Driver (Unchecked) -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex items-center justify-between cursor-pointer transition-all active:scale-[0.99]" id="addon-card-4" onclick="toggleAddon('addon-check-4', 10, 'addon-card-4')">
+<div class="flex items-start gap-3.5 flex-1 min-w-0 pr-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">person_add</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate block">Additional Certified Driver</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Valid license registered on policy
+            </p>
+<p class="font-label-md text-label-md text-secondary font-bold mt-1">
+              +10 TND <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ day</span>
+</p>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<input class="hidden" data-rate="10" id="addon-check-4" onclick="event.stopPropagation()" type="checkbox"/>
+<div class="w-6 h-6 rounded-md bg-surface-container flex items-center justify-center text-transparent" id="addon-box-4">
+<span class="material-symbols-outlined text-[18px] font-bold">check</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Bottom Reservation Tray -->
+<aside class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-8px_30px_rgba(11,25,44,0.08)] px-margin py-3.5 pb-safe">
+<div class="max-w-md mx-auto flex items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">
+          Total (4 Days)
+        </span>
+<div class="flex items-baseline gap-1">
+<span class="font-price-display text-price-display text-on-surface font-extrabold tracking-tight" id="total-price-display">
+            1,160
+          </span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">TND</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Taxes &amp; Add-ons inc.</span>
+</div>
+<button class="flex-1 bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed active:scale-[0.98] py-3.5 px-5 rounded-xl font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md transition-all" onclick="confirmBooking()" type="button">
+<span>Digital Booking</span>
+<span class="material-symbols-outlined text-[20px] font-bold">arrow_forward</span>
+</button>
+</div>
+</aside>
+</div>
+<script>
+  // Dynamic Price Calculation
+  const BASE_VEHICLE_RATE_4_DAYS = 960; // 240 TND / day * 4 days
+  const DURATION_DAYS = 4;
+
+  function recalculateTotal() {
+    let addOnsTotalPerDay = 0;
+    const checkboxes = document.querySelectorAll('#addons-list input[type="checkbox"]');
+    checkboxes.forEach(cb => {
+      if (cb.checked) {
+        addOnsTotalPerDay += parseFloat(cb.dataset.rate || 0);
+      }
+    });
+
+    const finalTotal = BASE_VEHICLE_RATE_4_DAYS + (addOnsTotalPerDay * DURATION_DAYS);
+    const display = document.getElementById('total-price-display');
+    if (display) {
+      display.textContent = finalTotal.toLocaleString('en-US');
+    }
+  }
+
+  function toggleAddon(checkboxId, rate, cardId) {
+    const cb = document.getElementById(checkboxId);
+    if (!cb) return;
+
+    cb.checked = !cb.checked;
+    const boxId = checkboxId.replace('check', 'box');
+    const box = document.getElementById(boxId);
+    const card = document.getElementById(cardId);
+
+    if (cb.checked) {
+      box.className = "w-6 h-6 rounded-md bg-primary flex items-center justify-center text-secondary-container";
+      if (card) {
+        card.classList.add('bg-gradient-to-r', 'from-surface-container-lowest', 'to-secondary-container/10');
+      }
+    } else {
+      box.className = "w-6 h-6 rounded-md bg-surface-container flex items-center justify-center text-transparent";
+      if (card) {
+        card.classList.remove('bg-gradient-to-r', 'from-surface-container-lowest', 'to-secondary-container/10');
+      }
+    }
+
+    recalculateTotal();
+  }
+
+  function toggleFavorite(button) {
+    const icon = button.querySelector('#fav-icon');
+    if (icon.style.fontVariationSettings && icon.style.fontVariationSettings.includes("'FILL' 1")) {
+      icon.style.fontVariationSettings = "'FILL' 0";
+      icon.classList.remove('text-error');
+    } else {
+      icon.style.fontVariationSettings = "'FILL' 1";
+      icon.classList.add('text-error');
+    }
+  }
+
+  function confirmBooking() {
+    const btn = event.currentTarget;
+    btn.classList.add('opacity-90', 'scale-[0.98]');
+    setTimeout(() => {
+      btn.classList.remove('opacity-90', 'scale-[0.98]');
+    }, 200);
+  }
+</script></main></body></html>
