@@ -100,11 +100,14 @@ class PasswordStrengthMeter extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(
-                '8+ car. • 1 chiffre • 1 majuscule',
-                style: AppTypography.labelSm.copyWith(
-                  color: AppColors.onSurfaceVariant,
-                  fontSize: 9.sp,
+              Flexible(
+                child: Text(
+                  '8+ car. • 1 chiffre • 1 majuscule',
+                  style: AppTypography.labelSm.copyWith(
+                    color: AppColors.onSurfaceVariant,
+                    fontSize: 9.sp,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],

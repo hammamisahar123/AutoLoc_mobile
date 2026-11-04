@@ -41,24 +41,30 @@ class VipTextField extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  label,
-                  style: AppTypography.labelMd.copyWith(
-                    color: AppColors.primaryContainer,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 12.sp,
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Flexible(
+                    child: Text(
+                      label,
+                      style: AppTypography.labelMd.copyWith(
+                        color: AppColors.primaryContainer,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12.sp,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                ),
-                if (isRequired) ...[
-                  2.horizontalSpace,
-                  Text('*', style: TextStyle(color: AppColors.error, fontSize: 12.sp)),
+                  if (isRequired) ...[
+                    2.horizontalSpace,
+                    Text('*', style: TextStyle(color: AppColors.error, fontSize: 12.sp)),
+                  ],
                 ],
-              ],
+              ),
             ),
-            if (badgeText != null)
+            if (badgeText != null) ...[
+              8.horizontalSpace,
               Text(
                 badgeText!,
                 style: AppTypography.labelSm.copyWith(
@@ -66,6 +72,7 @@ class VipTextField extends StatelessWidget {
                   fontSize: 10.sp,
                 ),
               ),
+            ],
           ],
         ),
         6.verticalSpace,

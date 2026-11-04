@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_typography.dart';
 
-/// Champ de saisie téléphonique avec indicatif tunisien (+216 🇹🇳) réutilisable.
+/// Champ de saisie téléphonique avec indicatif tunisien (+216 🇹🇳) réutilisable - Zero Overflow.
 class VipPhoneField extends StatelessWidget {
   final String label;
   final String initialValue;
@@ -28,22 +28,28 @@ class VipPhoneField extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  label,
-                  style: AppTypography.labelMd.copyWith(
-                    color: AppColors.primaryContainer,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 12.sp,
+            Expanded(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Flexible(
+                    child: Text(
+                      label,
+                      style: AppTypography.labelMd.copyWith(
+                        color: AppColors.primaryContainer,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12.sp,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                ),
-                2.horizontalSpace,
-                Text('*', style: TextStyle(color: AppColors.error, fontSize: 12.sp)),
-              ],
+                  2.horizontalSpace,
+                  Text('*', style: TextStyle(color: AppColors.error, fontSize: 12.sp)),
+                ],
+              ),
             ),
-            if (badgeText != null)
+            if (badgeText != null) ...[
+              8.horizontalSpace,
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
                 decoration: BoxDecoration(
@@ -59,6 +65,7 @@ class VipPhoneField extends StatelessWidget {
                   ),
                 ),
               ),
+            ],
           ],
         ),
         6.verticalSpace,
