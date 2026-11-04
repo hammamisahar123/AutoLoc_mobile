@@ -22,6 +22,7 @@ class VipCheckbox extends StatelessWidget {
       onTap: () => onChanged(!value),
       behavior: HitTestBehavior.opaque,
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
@@ -37,7 +38,8 @@ class VipCheckbox extends StatelessWidget {
             ),
           ),
           10.horizontalSpace,
-          Expanded(
+          Flexible(
+            fit: FlexFit.loose,
             child: Text(
               label,
               style: AppTypography.bodySm.copyWith(

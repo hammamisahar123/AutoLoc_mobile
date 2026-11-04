@@ -107,12 +107,15 @@ class VipServiceShowcaseCard extends StatelessWidget {
           children: [
             const VipSvgIcon('carthage_shield', size: 14, color: AppColors.secondary),
             6.horizontalSpace,
-            Text(
-              'Paiements 100% sécurisés ClicToPay • GIE Monétique Tunisie',
-              style: AppTypography.labelSm.copyWith(
-                color: AppColors.onSurfaceVariant,
-                fontWeight: FontWeight.w700,
-                fontSize: 10.sp,
+            Flexible(
+              child: Text(
+                'Paiements 100% sécurisés ClicToPay • GIE Monétique Tunisie',
+                style: AppTypography.labelSm.copyWith(
+                  color: AppColors.onSurfaceVariant,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 10.sp,
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],

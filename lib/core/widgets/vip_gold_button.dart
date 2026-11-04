@@ -41,14 +41,18 @@ class VipGoldButton extends StatelessWidget {
                 ),
               )
             : Row(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    text,
-                    style: AppTypography.labelLg.copyWith(
-                      color: const Color(0xFF251A00),
-                      fontWeight: FontWeight.w800,
-                      fontSize: 13.sp,
+                  Flexible(
+                    child: Text(
+                      text,
+                      style: AppTypography.labelLg.copyWith(
+                        color: const Color(0xFF251A00),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 13.sp,
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   8.horizontalSpace,

@@ -40,11 +40,13 @@ class LoginHeaderBanner extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildBrandChip(),
+                  Flexible(child: _buildBrandChip()),
+                  6.horizontalSpace,
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       const _LanguageSelectorPill(),
-                      8.horizontalSpace,
+                      6.horizontalSpace,
                       Container(
                         width: 32.w,
                         height: 32.w,
@@ -85,13 +87,16 @@ class LoginHeaderBanner extends StatelessWidget {
                       ),
                     ),
                     6.horizontalSpace,
-                    Text(
-                      'TUNIS-CARTHAGE SALON D\'HONNEUR',
-                      style: AppTypography.labelSm.copyWith(
-                        color: AppColors.secondary,
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 1.0,
+                    Flexible(
+                      child: Text(
+                        'TUNIS-CARTHAGE SALON D\'HONNEUR',
+                        style: AppTypography.labelSm.copyWith(
+                          color: AppColors.secondary,
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w800,
+                          letterSpacing: 1.0,
+                        ),
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ],
@@ -128,13 +133,16 @@ class LoginHeaderBanner extends StatelessWidget {
         children: [
           const VipSvgIcon('vip_crown', size: 14, color: AppColors.secondary),
           6.horizontalSpace,
-          Text(
-            'AUTOLOC CONCIERGE',
-            style: AppTypography.labelSm.copyWith(
-              color: Colors.white,
-              fontSize: 10.sp,
-              letterSpacing: 1.1,
-              fontWeight: FontWeight.w700,
+          Flexible(
+            child: Text(
+              'AUTOLOC CONCIERGE',
+              style: AppTypography.labelSm.copyWith(
+                color: Colors.white,
+                fontSize: 10.sp,
+                letterSpacing: 1.1,
+                fontWeight: FontWeight.w700,
+              ),
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],

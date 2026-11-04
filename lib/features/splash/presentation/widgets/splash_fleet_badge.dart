@@ -34,12 +34,15 @@ class SplashFleetBadge extends StatelessWidget {
             ),
           ),
           8.horizontalSpace,
-          Text(
-            'TUN FLEET ACTIVE • TIER 1 SOVEREIGN',
-            style: AppTypography.labelSm.copyWith(
-              fontSize: 10.sp,
-              color: AppColors.secondary,
-              letterSpacing: 1.2,
+          Flexible(
+            child: Text(
+              'TUN FLEET ACTIVE • TIER 1 SOVEREIGN',
+              style: AppTypography.labelSm.copyWith(
+                fontSize: 10.sp,
+                color: AppColors.secondary,
+                letterSpacing: 1.2,
+              ),
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
