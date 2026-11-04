@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_typography.dart';
-import '../cubit/auth_cubit.dart';
-import '../cubit/auth_state.dart';
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/theme/app_typography.dart';
+import '../../cubit/auth_cubit.dart';
+import '../../cubit/auth_state.dart';
 
 /// Commutateur d'onglets (Connexion / Inscription) - 100 % StatelessWidget.
-/// L'état de l'onglet actif est géré directement par AuthCubit.
 class AuthSegmentedTab extends StatelessWidget {
   const AuthSegmentedTab({super.key});
 
@@ -21,12 +20,11 @@ class AuthSegmentedTab extends StatelessWidget {
         return Container(
           padding: EdgeInsets.all(4.r),
           decoration: BoxDecoration(
-            color: const Color(0xFFDCE9FF), // surface-container-high
+            color: const Color(0xFFDCE9FF),
             borderRadius: BorderRadius.circular(14.r),
           ),
           child: Row(
             children: [
-              // Onglet Connexion
               Expanded(
                 child: _TabButton(
                   title: 'Connexion',
@@ -35,7 +33,6 @@ class AuthSegmentedTab extends StatelessWidget {
                   onTap: () => context.read<AuthCubit>().setTab(AuthTab.login),
                 ),
               ),
-              // Onglet Inscription
               Expanded(
                 child: _TabButton(
                   title: 'Inscription',

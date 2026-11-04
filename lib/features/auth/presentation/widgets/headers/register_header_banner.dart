@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_typography.dart';
-import '../../../../core/widgets/vip_svg_icon.dart';
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/theme/app_typography.dart';
+import '../../../../../core/widgets/vip_svg_icon.dart';
 
 /// En-tête de prestige pour l'Inscription VIP AutoLoc Tunisie.
 class RegisterHeaderBanner extends StatelessWidget {
@@ -13,7 +13,7 @@ class RegisterHeaderBanner extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.primary, // Midnight Navy officiel identique à la connexion
+        color: AppColors.primary, // Midnight Navy
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(24.r),
           bottomRight: Radius.circular(24.r),

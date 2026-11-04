@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_typography.dart';
-import '../../../../core/widgets/vip_svg_icon.dart';
-import '../cubit/auth_cubit.dart';
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/theme/app_typography.dart';
+import '../../../../../core/widgets/vip_svg_icon.dart';
+import '../../cubit/auth_cubit.dart';
 
 /// Carte d'accès biométrique express (Face ID & Touch ID Tarmac Pass) (< 80 lignes).
 class BiometricAccessCard extends StatelessWidget {
@@ -23,7 +23,6 @@ class BiometricAccessCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Icône SVG d'empreinte digitale dorée
           Container(
             width: 44.w,
             height: 44.w,
@@ -40,8 +39,6 @@ class BiometricAccessCard extends StatelessWidget {
             ),
           ),
           12.horizontalSpace,
-
-          // Textes informatifs orientés conciergerie tunisienne
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,8 +75,6 @@ class BiometricAccessCard extends StatelessWidget {
               ],
             ),
           ),
-
-          // Bouton Scanner
           GestureDetector(
             onTap: cubit.loginBiometric,
             child: Container(

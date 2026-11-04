@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_typography.dart';
-import '../../../../core/widgets/vip_checkbox.dart';
-import '../../../../core/widgets/vip_gold_button.dart';
-import '../../../../core/widgets/vip_phone_field.dart';
-import '../../../../core/widgets/vip_svg_icon.dart';
-import '../../../../core/widgets/vip_text_field.dart';
-import '../cubit/auth_cubit.dart';
-import '../cubit/auth_state.dart';
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/theme/app_typography.dart';
+import '../../../../../core/widgets/vip_checkbox.dart';
+import '../../../../../core/widgets/vip_gold_button.dart';
+import '../../../../../core/widgets/vip_phone_field.dart';
+import '../../../../../core/widgets/vip_svg_icon.dart';
+import '../../../../../core/widgets/vip_text_field.dart';
+import '../../cubit/auth_cubit.dart';
+import '../../cubit/auth_state.dart';
 
-/// Formulaire de connexion - 100 % StatelessWidget, SRP & SVG.
+/// Formulaire de connexion VIP - 100 % StatelessWidget & SRP.
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
 
@@ -35,7 +35,7 @@ class LoginForm extends StatelessWidget {
             ),
             16.verticalSpace,
 
-            // 2. Champ Mot de passe avec icône SVG
+            // 2. Champ Mot de passe
             VipTextField(
               label: 'Mot de passe confidentiel',
               hint: '••••••••••••',

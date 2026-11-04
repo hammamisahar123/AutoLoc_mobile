@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_typography.dart';
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/theme/app_typography.dart';
 
-/// Jauge visuelle de robustesse de mot de passe (Password Strength Meter).
+/// Jauge visuelle de robustesse de mot de passe (Password Strength Meter) - Zero Overflow.
 class PasswordStrengthMeter extends StatelessWidget {
   final String password;
 
@@ -60,7 +60,6 @@ class PasswordStrengthMeter extends StatelessWidget {
       ),
       child: Column(
         children: [
-          // 4 barres horizontales
           Row(
             children: List.generate(4, (index) {
               final isFilled = index < score;
@@ -77,12 +76,11 @@ class PasswordStrengthMeter extends StatelessWidget {
             }),
           ),
           6.verticalSpace,
-
-          // Label textuel informatif
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
                     score >= 3 ? Icons.check_circle_rounded : Icons.info_outline_rounded,

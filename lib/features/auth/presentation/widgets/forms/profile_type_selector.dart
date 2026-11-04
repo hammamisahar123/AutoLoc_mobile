@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_typography.dart';
-import '../cubit/auth_cubit.dart';
-import '../cubit/auth_state.dart';
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/theme/app_typography.dart';
+import '../../cubit/auth_cubit.dart';
+import '../../cubit/auth_state.dart';
 
 /// Sélecteur de type de compte VIP Tunisie - 100 % StatelessWidget.
 class ProfileTypeSelector extends StatelessWidget {
@@ -20,7 +20,6 @@ class ProfileTypeSelector extends StatelessWidget {
 
         return Column(
           children: [
-            // Commutateur double onglet
             Container(
               padding: EdgeInsets.all(4.r),
               decoration: BoxDecoration(
@@ -47,8 +46,6 @@ class ProfileTypeSelector extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Avantage fiscal Tunisie si Business
             if (isBusiness) ...[
               12.verticalSpace,
               Container(

@@ -5,20 +5,11 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
 import '../cubit/auth_cubit.dart';
 import '../cubit/auth_state.dart';
-import '../widgets/auth_segmented_tab.dart';
-import '../widgets/biometric_access_card.dart';
-import '../widgets/diplomatic_sso_buttons.dart';
-import '../widgets/login_form.dart';
-import '../widgets/login_header_banner.dart';
-import '../widgets/profile_type_selector.dart';
-import '../widgets/register_form.dart';
-import '../widgets/register_header_banner.dart';
-import '../widgets/vip_service_showcase_card.dart';
+import '../widgets/widgets.dart';
 
 /// Page d'authentification et de connexion VIP AutoLoc - 100 % StatelessWidget.
-/// - Architecture Clean : Séparation totale de l'UI et de la logique.
-/// - Tout l'état est géré de façon immuable par AuthCubit avec Freezed.
-/// - Zéro setState, zéro StatefulWidget dans toute la couche de présentation.
+/// - Architecture Clean : Séparation totale de l'UI et de la logique via Cubit + Freezed.
+/// - Widgets organisés par sous-dossiers (headers/, forms/, cards/) avec barrel export.
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -74,7 +65,7 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // 1. Bannière d'en-tête dynamique selon l'onglet (100% Stateless)
+                  // 1. Bannière d'en-tête dynamique selon l'onglet
                   AnimatedCrossFade(
                     firstChild: const LoginHeaderBanner(),
                     secondChild: const RegisterHeaderBanner(),

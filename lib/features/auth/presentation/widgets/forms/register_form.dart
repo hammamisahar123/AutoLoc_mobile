@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_typography.dart';
-import '../../../../core/widgets/vip_checkbox.dart';
-import '../../../../core/widgets/vip_gold_button.dart';
-import '../../../../core/widgets/vip_phone_field.dart';
-import '../../../../core/widgets/vip_svg_icon.dart';
-import '../../../../core/widgets/vip_text_field.dart';
-import '../cubit/auth_cubit.dart';
-import '../cubit/auth_state.dart';
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/theme/app_typography.dart';
+import '../../../../../core/widgets/vip_checkbox.dart';
+import '../../../../../core/widgets/vip_gold_button.dart';
+import '../../../../../core/widgets/vip_phone_field.dart';
+import '../../../../../core/widgets/vip_svg_icon.dart';
+import '../../../../../core/widgets/vip_text_field.dart';
+import '../../cubit/auth_cubit.dart';
+import '../../cubit/auth_state.dart';
 import 'password_strength_meter.dart';
-import 'register_testimonial_card.dart';
+import '../cards/register_testimonial_card.dart';
 
-/// Formulaire d'accréditation VIP AutoLoc Tunisie - 100 % StatelessWidget, SRP & SVG.
+/// Formulaire d'accréditation VIP AutoLoc Tunisie - 100 % StatelessWidget & SRP.
 class RegisterForm extends StatelessWidget {
   const RegisterForm({super.key});
 
@@ -44,7 +44,7 @@ class RegisterForm extends StatelessWidget {
             ),
             14.verticalSpace,
 
-            // 2. Numéro de téléphone portable tunisien
+            // 2. Numéro de téléphone mobile tunisien
             VipPhoneField(
               label: 'Numéro mobile tunisien (+216 🇹🇳)',
               badgeText: 'OTP Express Tunisie',

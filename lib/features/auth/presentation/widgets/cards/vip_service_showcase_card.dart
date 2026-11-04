@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_typography.dart';
-import '../../../../core/widgets/vip_svg_icon.dart';
+import '../../../../../core/theme/app_colors.dart';
+import '../../../../../core/theme/app_typography.dart';
+import '../../../../../core/widgets/vip_svg_icon.dart';
 
 /// Carte showcase de conciergerie Carthage et conformité légale tunisienne (< 90 lignes).
 class VipServiceShowcaseCard extends StatelessWidget {
@@ -16,7 +16,7 @@ class VipServiceShowcaseCard extends StatelessWidget {
         Container(
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
-            color: AppColors.primary, // Midnight Navy cohérent
+            color: AppColors.primary,
             borderRadius: BorderRadius.circular(16.r),
             boxShadow: [
               BoxShadow(
