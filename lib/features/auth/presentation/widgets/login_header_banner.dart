@@ -6,8 +6,7 @@ import '../../../../core/theme/app_typography.dart';
 import '../cubit/auth_cubit.dart';
 import '../cubit/auth_state.dart';
 
-/// Bannière supérieure de prestige - 100 % StatelessWidget.
-/// L'état de la langue est géré par AuthCubit.
+/// Bannière supérieure de prestige pour la Connexion (< 100 lignes).
 class LoginHeaderBanner extends StatelessWidget {
   const LoginHeaderBanner({super.key});
 
@@ -36,62 +35,14 @@ class LoginHeaderBanner extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. Barre d'utilité haute
+              // 1. Barre d'utilité : Marque + Sélecteur de Langue + Badge VIP
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Marque Concierge
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(999.r),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.stars,
-                          color: AppColors.secondary,
-                          size: 16.sp,
-                        ),
-                        6.horizontalSpace,
-                        Text(
-                          'AUTOLOC CONCIERGE',
-                          style: AppTypography.labelSm.copyWith(
-                            color: Colors.white,
-                            fontSize: 10.sp,
-                            letterSpacing: 1.1,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  // Sélecteur de langue + Badge VIP
+                  _buildBrandChip(),
                   Row(
                     children: [
-                      BlocBuilder<AuthCubit, AuthState>(
-                        buildWhen: (prev, curr) => prev.language != curr.language,
-                        builder: (context, state) {
-                          return Container(
-                            padding: EdgeInsets.all(3.r),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(999.r),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                _buildLangChip(context, 'FR', AppLanguage.fr, state.language),
-                                _buildLangChip(context, 'EN', AppLanguage.en, state.language),
-                                _buildLangChip(context, 'عربي', AppLanguage.ar, state.language),
-                              ],
-                            ),
-                          );
-                        },
-                      ),
+                      const _LanguageSelectorPill(),
                       8.horizontalSpace,
                       Container(
                         width: 32.w,
@@ -112,7 +63,7 @@ class LoginHeaderBanner extends StatelessWidget {
               ),
               20.verticalSpace,
 
-              // 2. Badge salon VIP
+              // 2. Badge salon VIP Carthage
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                 decoration: BoxDecoration(
@@ -145,7 +96,7 @@ class LoginHeaderBanner extends StatelessWidget {
               ),
               8.verticalSpace,
 
-              // 3. Titre
+              // 3. Titre d'accueil
               Text(
                 'Bon retour parmi nous',
                 style: AppTypography.headlineXl.copyWith(
@@ -162,21 +113,72 @@ class LoginHeaderBanner extends StatelessWidget {
     );
   }
 
-  Widget _buildLangChip(
+  Widget _buildBrandChip() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(999.r),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.stars, color: AppColors.secondary, size: 16.sp),
+          6.horizontalSpace,
+          Text(
+            'AUTOLOC CONCIERGE',
+            style: AppTypography.labelSm.copyWith(
+              color: Colors.white,
+              fontSize: 10.sp,
+              letterSpacing: 1.1,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _LanguageSelectorPill extends StatelessWidget {
+  const _LanguageSelectorPill();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AuthCubit, AuthState>(
+      buildWhen: (prev, curr) => prev.language != curr.language,
+      builder: (context, state) {
+        return Container(
+          padding: EdgeInsets.all(3.r),
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(999.r),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildItem(context, 'FR', AppLanguage.fr, state.language),
+              _buildItem(context, 'EN', AppLanguage.en, state.language),
+              _buildItem(context, 'عربي', AppLanguage.ar, state.language),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildItem(
     BuildContext context,
     String label,
     AppLanguage lang,
-    AppLanguage currentLang,
+    AppLanguage current,
   ) {
-    final isSelected = currentLang == lang;
+    final isSelected = current == lang;
     return GestureDetector(
       onTap: () => context.read<AuthCubit>().setLanguage(lang),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        padding: EdgeInsets.symmetric(
-          horizontal: 8.w,
-          vertical: 4.h,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
         decoration: BoxDecoration(
           color: isSelected ? AppColors.secondary : Colors.transparent,
           borderRadius: BorderRadius.circular(999.r),

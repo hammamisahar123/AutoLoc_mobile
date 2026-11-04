@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
 
-/// Boutons d'authentification fédérée et identification diplomatique (Apple & Google).
+/// Boutons SSO diplomatique (Apple ID & Google Suite) (< 80 lignes).
 class DiplomaticSsoButtons extends StatelessWidget {
   const DiplomaticSsoButtons({super.key});
 
@@ -11,15 +11,9 @@ class DiplomaticSsoButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // 1. Séparateur avec mention textuelle
         Row(
           children: [
-            const Expanded(
-              child: Divider(
-                color: Color(0xFFDCE9FF),
-                thickness: 1,
-              ),
-            ),
+            const Expanded(child: Divider(color: Color(0xFFDCE9FF), thickness: 1)),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: Text(
@@ -32,41 +26,24 @@ class DiplomaticSsoButtons extends StatelessWidget {
                 ),
               ),
             ),
-            const Expanded(
-              child: Divider(
-                color: Color(0xFFDCE9FF),
-                thickness: 1,
-              ),
-            ),
+            const Expanded(child: Divider(color: Color(0xFFDCE9FF), thickness: 1)),
           ],
         ),
         16.verticalSpace,
-
-        // 2. Boutons Apple ID & Google Suite
         Row(
           children: [
             Expanded(
               child: _SsoButton(
                 label: 'Apple ID',
-                iconWidget: Icon(
-                  Icons.apple,
-                  size: 20.sp,
-                  color: AppColors.primaryContainer,
-                ),
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Connexion sécurisée via Apple ID...'),
-                    ),
-                  );
-                },
+                icon: Icon(Icons.apple, size: 20.sp, color: AppColors.primaryContainer),
+                onTap: () => _notify(context, 'Connexion via Apple ID...'),
               ),
             ),
             12.horizontalSpace,
             Expanded(
               child: _SsoButton(
                 label: 'Google Suite',
-                iconWidget: Text(
+                icon: Text(
                   'G',
                   style: TextStyle(
                     fontFamily: 'serif',
@@ -75,13 +52,7 @@ class DiplomaticSsoButtons extends StatelessWidget {
                     color: const Color(0xFF4285F4),
                   ),
                 ),
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Connexion sécurisée via Google Workspace...'),
-                    ),
-                  );
-                },
+                onTap: () => _notify(context, 'Connexion via Google Workspace...'),
               ),
             ),
           ],
@@ -89,16 +60,20 @@ class DiplomaticSsoButtons extends StatelessWidget {
       ],
     );
   }
+
+  void _notify(BuildContext context, String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+  }
 }
 
 class _SsoButton extends StatelessWidget {
   final String label;
-  final Widget iconWidget;
+  final Widget icon;
   final VoidCallback onTap;
 
   const _SsoButton({
     required this.label,
-    required this.iconWidget,
+    required this.icon,
     required this.onTap,
   });
 
@@ -123,7 +98,7 @@ class _SsoButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            iconWidget,
+            icon,
             8.horizontalSpace,
             Text(
               label,

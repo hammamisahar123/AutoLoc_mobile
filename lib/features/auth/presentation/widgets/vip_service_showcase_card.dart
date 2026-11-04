@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
 
-/// Carte showcase de conciergerie à l'Aéroport Tunis-Carthage et garanties légales tunisiennes.
+/// Carte showcase de conciergerie Carthage et conformité légale (< 90 lignes).
 class VipServiceShowcaseCard extends StatelessWidget {
   const VipServiceShowcaseCard({super.key});
 
@@ -27,17 +27,12 @@ class VipServiceShowcaseCard extends StatelessWidget {
           ),
           child: Column(
             children: [
-              // Ligne d'en-tête du service
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                      Icon(
-                        Icons.flight_land_rounded,
-                        color: const Color(0xFFFEC325),
-                        size: 18.sp,
-                      ),
+                      Icon(Icons.flight_land_rounded, color: const Color(0xFFFEC325), size: 18.sp),
                       6.horizontalSpace,
                       Text(
                         'SERVICE MEET & GREET CARTHAGE',
@@ -61,8 +56,6 @@ class VipServiceShowcaseCard extends StatelessWidget {
                 ],
               ),
               12.verticalSpace,
-
-              // Ligne contenu de la flotte
               Row(
                 children: [
                   Container(
@@ -72,11 +65,7 @@ class VipServiceShowcaseCard extends StatelessWidget {
                       color: Colors.white.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(10.r),
                     ),
-                    child: Icon(
-                      Icons.directions_car_filled_rounded,
-                      color: AppColors.secondary,
-                      size: 26.sp,
-                    ),
+                    child: Icon(Icons.directions_car_filled_rounded, color: AppColors.secondary, size: 26.sp),
                   ),
                   12.horizontalSpace,
                   Expanded(
@@ -109,38 +98,30 @@ class VipServiceShowcaseCard extends StatelessWidget {
         ),
         16.verticalSpace,
 
-        // 2. Mentions légales et sécurité Monétique Tunisie
-        Column(
+        // 2. Conformité Monétique Tunisie & Loi 2000-83
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.verified_user_rounded,
-                  color: AppColors.secondary,
-                  size: 14.sp,
-                ),
-                6.horizontalSpace,
-                Text(
-                  'Paiements 100% sécurisés • Monétique Tunisie',
-                  style: AppTypography.labelSm.copyWith(
-                    color: AppColors.onSurfaceVariant,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 10.sp,
-                  ),
-                ),
-              ],
-            ),
-            4.verticalSpace,
+            Icon(Icons.verified_user_rounded, color: AppColors.secondary, size: 14.sp),
+            6.horizontalSpace,
             Text(
-              'Conforme aux normes de protection de données Loi Tunisienne N° 2000-83',
-              textAlign: TextAlign.center,
+              'Paiements 100% sécurisés • Monétique Tunisie',
               style: AppTypography.labelSm.copyWith(
-                color: AppColors.outline.withValues(alpha: 0.8),
-                fontSize: 9.sp,
+                color: AppColors.onSurfaceVariant,
+                fontWeight: FontWeight.w700,
+                fontSize: 10.sp,
               ),
             ),
           ],
+        ),
+        4.verticalSpace,
+        Text(
+          'Conforme aux normes de protection de données Loi Tunisienne N° 2000-83',
+          textAlign: TextAlign.center,
+          style: AppTypography.labelSm.copyWith(
+            color: AppColors.outline.withValues(alpha: 0.8),
+            fontSize: 9.sp,
+          ),
         ),
       ],
     );

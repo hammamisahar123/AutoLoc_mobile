@@ -5,21 +5,20 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
 import '../cubit/auth_cubit.dart';
 
-/// Carte d'accès biométrique express (Face ID & Empreinte digitale).
+/// Carte d'accès biométrique express (Face ID & Touch ID) (< 80 lignes).
 class BiometricAccessCard extends StatelessWidget {
   const BiometricAccessCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<AuthCubit>();
+
     return Container(
       padding: EdgeInsets.all(14.r),
       decoration: BoxDecoration(
-        color: const Color(0xFFEFF4FF), // surface-container-low
+        color: const Color(0xFFEFF4FF),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: const Color(0xFFDCE9FF),
-          width: 1.w,
-        ),
+        border: Border.all(color: const Color(0xFFDCE9FF), width: 1.w),
       ),
       child: Row(
         children: [
@@ -79,15 +78,7 @@ class BiometricAccessCard extends StatelessWidget {
 
           // Bouton Scanner
           GestureDetector(
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Vérification biométrique Face ID réussie.'),
-                ),
-              );
-              // Connexion directe par biométrie VIP via Cubit
-              context.read<AuthCubit>().loginBiometric();
-            },
+            onTap: cubit.loginBiometric,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
               decoration: BoxDecoration(

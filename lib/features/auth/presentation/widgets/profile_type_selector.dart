@@ -6,8 +6,7 @@ import '../../../../core/theme/app_typography.dart';
 import '../cubit/auth_cubit.dart';
 import '../cubit/auth_state.dart';
 
-/// Sélecteur de type de compte VIP - 100 % StatelessWidget.
-/// L'état du profil (Particulier vs Business) est géré directement par AuthCubit.
+/// Sélecteur de type de compte VIP - 100 % StatelessWidget, concis et modulaire.
 class ProfileTypeSelector extends StatelessWidget {
   const ProfileTypeSelector({super.key});
 
@@ -30,135 +29,26 @@ class ProfileTypeSelector extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  // 1. Particulier / Touriste
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () => cubit.setBusinessProfile(false),
-                      behavior: HitTestBehavior.opaque,
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 4.w),
-                        decoration: BoxDecoration(
-                          color: !isBusiness ? Colors.white : Colors.transparent,
-                          borderRadius: BorderRadius.circular(10.r),
-                          boxShadow: !isBusiness
-                              ? [
-                                  BoxShadow(
-                                    color: Colors.black.withValues(alpha: 0.08),
-                                    blurRadius: 6.r,
-                                    offset: Offset(0, 2.h),
-                                  ),
-                                ]
-                              : null,
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.person_rounded,
-                                  size: 16.sp,
-                                  color: !isBusiness
-                                      ? AppColors.primaryContainer
-                                      : AppColors.onSurfaceVariant,
-                                ),
-                                6.horizontalSpace,
-                                Text(
-                                  'Particulier',
-                                  style: AppTypography.labelMd.copyWith(
-                                    color: !isBusiness
-                                        ? AppColors.primaryContainer
-                                        : AppColors.onSurfaceVariant,
-                                    fontWeight: !isBusiness
-                                        ? FontWeight.w800
-                                        : FontWeight.w600,
-                                    fontSize: 12.sp,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            2.verticalSpace,
-                            Text(
-                              'Livraison hôtel & aéroport',
-                              style: AppTypography.labelSm.copyWith(
-                                color: AppColors.onSurfaceVariant,
-                                fontSize: 9.sp,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                  _ProfileOptionCard(
+                    title: 'Particulier',
+                    subtitle: 'Livraison hôtel & aéroport',
+                    icon: Icons.person_rounded,
+                    isSelected: !isBusiness,
+                    onTap: () => cubit.setBusinessProfile(false),
                   ),
-
-                  // 2. VIP Business
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () => cubit.setBusinessProfile(true),
-                      behavior: HitTestBehavior.opaque,
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 4.w),
-                        decoration: BoxDecoration(
-                          color: isBusiness ? Colors.white : Colors.transparent,
-                          borderRadius: BorderRadius.circular(10.r),
-                          boxShadow: isBusiness
-                              ? [
-                                  BoxShadow(
-                                    color: Colors.black.withValues(alpha: 0.08),
-                                    blurRadius: 6.r,
-                                    offset: Offset(0, 2.h),
-                                  ),
-                                ]
-                              : null,
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.corporate_fare_rounded,
-                                  size: 16.sp,
-                                  color: isBusiness
-                                      ? AppColors.secondary
-                                      : AppColors.onSurfaceVariant,
-                                ),
-                                6.horizontalSpace,
-                                Text(
-                                  'VIP Business',
-                                  style: AppTypography.labelMd.copyWith(
-                                    color: isBusiness
-                                        ? AppColors.primaryContainer
-                                        : AppColors.onSurfaceVariant,
-                                    fontWeight: isBusiness
-                                        ? FontWeight.w800
-                                        : FontWeight.w600,
-                                    fontSize: 12.sp,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            2.verticalSpace,
-                            Text(
-                              'TVA Déductible & Facture',
-                              style: AppTypography.labelSm.copyWith(
-                                color: AppColors.secondary,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 9.sp,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                  _ProfileOptionCard(
+                    title: 'VIP Business',
+                    subtitle: 'TVA Déductible & Facture',
+                    icon: Icons.corporate_fare_rounded,
+                    isSelected: isBusiness,
+                    accentSubtitle: true,
+                    onTap: () => cubit.setBusinessProfile(true),
                   ),
                 ],
               ),
             ),
 
-            // Carte d'avantage fiscal (si mode Business sélectionné)
+            // Avantage fiscal si Business
             if (isBusiness) ...[
               12.verticalSpace,
               Container(
@@ -166,19 +56,12 @@ class ProfileTypeSelector extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: const Color(0xFFEFF4FF),
                   borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: const Color(0xFFDCE9FF),
-                    width: 1.w,
-                  ),
+                  border: Border.all(color: const Color(0xFFDCE9FF), width: 1.w),
                 ),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(
-                      Icons.verified_rounded,
-                      color: AppColors.secondary,
-                      size: 18.sp,
-                    ),
+                    Icon(Icons.verified_rounded, color: AppColors.secondary, size: 18.sp),
                     8.horizontalSpace,
                     Expanded(
                       child: RichText(
@@ -210,6 +93,91 @@ class ProfileTypeSelector extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+}
+
+class _ProfileOptionCard extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final bool isSelected;
+  final bool accentSubtitle;
+  final VoidCallback onTap;
+
+  const _ProfileOptionCard({
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.isSelected,
+    this.accentSubtitle = false,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        behavior: HitTestBehavior.opaque,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 4.w),
+          decoration: BoxDecoration(
+            color: isSelected ? Colors.white : Colors.transparent,
+            borderRadius: BorderRadius.circular(10.r),
+            boxShadow: isSelected
+                ? [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.08),
+                      blurRadius: 6.r,
+                      offset: Offset(0, 2.h),
+                    ),
+                  ]
+                : null,
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    icon,
+                    size: 16.sp,
+                    color: isSelected
+                        ? (accentSubtitle ? AppColors.secondary : AppColors.primaryContainer)
+                        : AppColors.onSurfaceVariant,
+                  ),
+                  6.horizontalSpace,
+                  Text(
+                    title,
+                    style: AppTypography.labelMd.copyWith(
+                      color: isSelected
+                          ? AppColors.primaryContainer
+                          : AppColors.onSurfaceVariant,
+                      fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
+                      fontSize: 12.sp,
+                    ),
+                  ),
+                ],
+              ),
+              2.verticalSpace,
+              Text(
+                subtitle,
+                style: AppTypography.labelSm.copyWith(
+                  color: accentSubtitle && isSelected
+                      ? AppColors.secondary
+                      : AppColors.onSurfaceVariant,
+                  fontWeight: accentSubtitle && isSelected
+                      ? FontWeight.w700
+                      : FontWeight.normal,
+                  fontSize: 9.sp,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
