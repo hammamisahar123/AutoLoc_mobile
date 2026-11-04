@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
+import '../../../../core/widgets/vip_svg_icon.dart';
 
-/// Boutons SSO diplomatique (Apple ID & Google Suite) (< 80 lignes).
+/// Boutons SSO diplomatique (Apple ID & Google Suite) avec icônes SVG officielles.
 class DiplomaticSsoButtons extends StatelessWidget {
   const DiplomaticSsoButtons({super.key});
 
@@ -17,7 +18,7 @@ class DiplomaticSsoButtons extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.w),
               child: Text(
-                'OU IDENTIFICATION DIPLOMATIQUE',
+                'OU ACCÈS DIPLOMATIQUE & AMBASSADE',
                 style: AppTypography.labelSm.copyWith(
                   color: AppColors.outline,
                   letterSpacing: 1.0,
@@ -35,23 +36,15 @@ class DiplomaticSsoButtons extends StatelessWidget {
             Expanded(
               child: _SsoButton(
                 label: 'Apple ID',
-                icon: Icon(Icons.apple, size: 20.sp, color: AppColors.primaryContainer),
-                onTap: () => _notify(context, 'Connexion via Apple ID...'),
+                icon: const VipSvgIcon('apple_logo', size: 18, color: AppColors.primaryContainer),
+                onTap: () => _notify(context, 'Connexion sécurisée via Apple ID...'),
               ),
             ),
             12.horizontalSpace,
             Expanded(
               child: _SsoButton(
                 label: 'Google Suite',
-                icon: Text(
-                  'G',
-                  style: TextStyle(
-                    fontFamily: 'serif',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF4285F4),
-                  ),
-                ),
+                icon: const VipSvgIcon('google_logo', size: 18),
                 onTap: () => _notify(context, 'Connexion via Google Workspace...'),
               ),
             ),

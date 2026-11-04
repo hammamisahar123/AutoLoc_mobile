@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_typography.dart';
+import 'vip_svg_icon.dart';
 
-/// Champ de saisie téléphonique avec indicatif tunisien (+216 🇹🇳) réutilisable - Zero Overflow.
+/// Champ de saisie téléphonique avec drapeau SVG tunisien officiel (+216 🇹🇳) - Zero Overflow.
 class VipPhoneField extends StatelessWidget {
   final String label;
   final String initialValue;
@@ -84,7 +85,11 @@ class VipPhoneField extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 2.h),
           child: Row(
             children: [
-              Text('🇹🇳', style: TextStyle(fontSize: 16.sp)),
+              // Drapeau tunisien officiel en SVG vectoriel
+              ClipRRect(
+                borderRadius: BorderRadius.circular(3.r),
+                child: const VipSvgIcon('tunisia_flag', size: 18),
+              ),
               6.horizontalSpace,
               Text(
                 '+216',

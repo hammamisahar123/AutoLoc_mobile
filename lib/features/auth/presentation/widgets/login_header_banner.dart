@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
+import '../../../../core/widgets/vip_svg_icon.dart';
 import '../cubit/auth_cubit.dart';
 import '../cubit/auth_state.dart';
 
-/// Bannière supérieure de prestige pour la Connexion (< 100 lignes).
+/// Bannière supérieure de prestige pour la Connexion VIP Tunis-Carthage.
 class LoginHeaderBanner extends StatelessWidget {
   const LoginHeaderBanner({super.key});
 
@@ -15,7 +16,7 @@ class LoginHeaderBanner extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.primary,
+        color: AppColors.primary, // Midnight Navy officiel
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(24.r),
           bottomRight: Radius.circular(24.r),
@@ -35,7 +36,7 @@ class LoginHeaderBanner extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. Barre d'utilité : Marque + Sélecteur de Langue + Badge VIP
+              // 1. Barre d'utilité : Marque + Sélecteur de Langue + Badge VIP Carthage
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -51,10 +52,12 @@ class LoginHeaderBanner extends StatelessWidget {
                           color: AppColors.secondary,
                           shape: BoxShape.circle,
                         ),
-                        child: Icon(
-                          Icons.verified_user,
-                          color: const Color(0xFF251A00),
-                          size: 18.sp,
+                        child: const Center(
+                          child: VipSvgIcon(
+                            'carthage_shield',
+                            size: 18,
+                            color: Color(0xFF251A00),
+                          ),
                         ),
                       ),
                     ],
@@ -63,7 +66,7 @@ class LoginHeaderBanner extends StatelessWidget {
               ),
               20.verticalSpace,
 
-              // 2. Badge salon VIP Carthage
+              // 2. Badge salon d'honneur VIP Carthage
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                 decoration: BoxDecoration(
@@ -83,7 +86,7 @@ class LoginHeaderBanner extends StatelessWidget {
                     ),
                     6.horizontalSpace,
                     Text(
-                      'TUNIS-CARTHAGE VIP LOUNGE',
+                      'TUNIS-CARTHAGE SALON D\'HONNEUR',
                       style: AppTypography.labelSm.copyWith(
                         color: AppColors.secondary,
                         fontSize: 10.sp,
@@ -123,7 +126,7 @@ class LoginHeaderBanner extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.stars, color: AppColors.secondary, size: 16.sp),
+          const VipSvgIcon('vip_crown', size: 14, color: AppColors.secondary),
           6.horizontalSpace,
           Text(
             'AUTOLOC CONCIERGE',

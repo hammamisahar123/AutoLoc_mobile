@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
+import '../../../../core/widgets/vip_svg_icon.dart';
 
-/// Carte showcase de conciergerie Carthage et conformité légale (< 90 lignes).
+/// Carte showcase de conciergerie Carthage et conformité légale tunisienne (< 90 lignes).
 class VipServiceShowcaseCard extends StatelessWidget {
   const VipServiceShowcaseCard({super.key});
 
@@ -11,11 +12,11 @@ class VipServiceShowcaseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // 1. Carte prestige Meet & Greet
+        // 1. Carte prestige Meet & Greet Tunis-Carthage
         Container(
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
-            color: AppColors.primaryContainer,
+            color: AppColors.primary, // Midnight Navy cohérent
             borderRadius: BorderRadius.circular(16.r),
             boxShadow: [
               BoxShadow(
@@ -32,10 +33,10 @@ class VipServiceShowcaseCard extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.flight_land_rounded, color: const Color(0xFFFEC325), size: 18.sp),
+                      const VipSvgIcon('plane_arrival', size: 18, color: Color(0xFFFEC325)),
                       6.horizontalSpace,
                       Text(
-                        'SERVICE MEET & GREET CARTHAGE',
+                        'SERVICE MEET & GREET TUNIS-CARTHAGE',
                         style: AppTypography.labelSm.copyWith(
                           color: const Color(0xFFFEC325),
                           fontWeight: FontWeight.w800,
@@ -65,7 +66,9 @@ class VipServiceShowcaseCard extends StatelessWidget {
                       color: Colors.white.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(10.r),
                     ),
-                    child: Icon(Icons.directions_car_filled_rounded, color: AppColors.secondary, size: 26.sp),
+                    child: const Center(
+                      child: VipSvgIcon('car_luxury', size: 28, color: AppColors.secondary),
+                    ),
                   ),
                   12.horizontalSpace,
                   Expanded(
@@ -73,7 +76,7 @@ class VipServiceShowcaseCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Berlines avec Chauffeur Privé',
+                          'Berlines Allemandes avec Chauffeur Privé',
                           style: AppTypography.labelMd.copyWith(
                             color: Colors.white,
                             fontWeight: FontWeight.w800,
@@ -82,7 +85,7 @@ class VipServiceShowcaseCard extends StatelessWidget {
                         ),
                         2.verticalSpace,
                         Text(
-                          'Prise en charge directe au salon d\'honneur',
+                          'Prise en charge directe au salon d\'honneur Carthage',
                           style: AppTypography.bodySm.copyWith(
                             color: const Color(0xFFBAC7E1),
                             fontSize: 11.sp,
@@ -98,14 +101,14 @@ class VipServiceShowcaseCard extends StatelessWidget {
         ),
         16.verticalSpace,
 
-        // 2. Conformité Monétique Tunisie & Loi 2000-83
+        // 2. Conformité Monétique Tunisie (ClicToPay) & Loi INPDP 2004-63
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.verified_user_rounded, color: AppColors.secondary, size: 14.sp),
+            const VipSvgIcon('carthage_shield', size: 14, color: AppColors.secondary),
             6.horizontalSpace,
             Text(
-              'Paiements 100% sécurisés • Monétique Tunisie',
+              'Paiements 100% sécurisés ClicToPay • GIE Monétique Tunisie',
               style: AppTypography.labelSm.copyWith(
                 color: AppColors.onSurfaceVariant,
                 fontWeight: FontWeight.w700,
@@ -116,7 +119,7 @@ class VipServiceShowcaseCard extends StatelessWidget {
         ),
         4.verticalSpace,
         Text(
-          'Conforme aux normes de protection de données Loi Tunisienne N° 2000-83',
+          'Protection des données personnelles certifiée conforme Loi Tunisienne N° 2004-63 (INPDP)',
           textAlign: TextAlign.center,
           style: AppTypography.labelSm.copyWith(
             color: AppColors.outline.withValues(alpha: 0.8),

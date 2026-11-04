@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
+import '../../../../core/widgets/vip_svg_icon.dart';
 
-/// En-tête de prestige pour l'Inscription VIP (< 100 lignes).
+/// En-tête de prestige pour l'Inscription VIP AutoLoc Tunisie.
 class RegisterHeaderBanner extends StatelessWidget {
   const RegisterHeaderBanner({super.key});
 
@@ -12,7 +13,7 @@ class RegisterHeaderBanner extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.primary,
+        color: AppColors.primary, // Midnight Navy officiel identique à la connexion
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(24.r),
           bottomRight: Radius.circular(24.r),
@@ -32,7 +33,7 @@ class RegisterHeaderBanner extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. Monogramme AL + Badge Accès Privilège
+              // 1. Monogramme AL + Badge Accès Privilège Carthage
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -42,9 +43,9 @@ class RegisterHeaderBanner extends StatelessWidget {
               ),
               16.verticalSpace,
 
-              // 2. Titre et description
+              // 2. Titre et description orientés Tunisie
               Text(
-                'Créer un compte VIP',
+                'Créer un compte VIP Tunisie',
                 style: AppTypography.headlineXl.copyWith(
                   color: Colors.white,
                   fontSize: 24.sp,
@@ -54,7 +55,7 @@ class RegisterHeaderBanner extends StatelessWidget {
               ),
               4.verticalSpace,
               Text(
-                'Rejoignez le club AutoLoc pour une prise en charge immédiate sans attente aux comptoirs.',
+                'Accueil personnalisé sur le tarmac de Tunis-Carthage et prise en charge directe au salon d\'honneur.',
                 style: AppTypography.bodySm.copyWith(
                   color: const Color(0xFFBAC7E1),
                   fontSize: 12.sp,
@@ -107,7 +108,7 @@ class RegisterHeaderBanner extends StatelessWidget {
               ),
             ),
             Text(
-              'Concierge Club',
+              'Club Concierge Tunis',
               style: AppTypography.headlineSm.copyWith(
                 color: Colors.white,
                 fontSize: 14.sp,
@@ -130,11 +131,7 @@ class RegisterHeaderBanner extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.workspace_premium_rounded,
-            color: const Color(0xFFFFDF9C),
-            size: 14.sp,
-          ),
+          const VipSvgIcon('vip_crown', size: 14, color: Color(0xFFFFDF9C)),
           4.horizontalSpace,
           Text(
             'ACCÈS PRIVILÈGE',
@@ -173,7 +170,7 @@ class _StepTrackerBar extends StatelessWidget {
                 ),
                 6.horizontalSpace,
                 Text(
-                  'Étape 1 sur 2 : Identité & Contact',
+                  'Étape 1 sur 2 : Identité & Contact Tunisien',
                   style: AppTypography.labelSm.copyWith(
                     color: Colors.white.withValues(alpha: 0.85),
                     fontSize: 11.sp,

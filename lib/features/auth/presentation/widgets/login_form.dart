@@ -6,11 +6,12 @@ import '../../../../core/theme/app_typography.dart';
 import '../../../../core/widgets/vip_checkbox.dart';
 import '../../../../core/widgets/vip_gold_button.dart';
 import '../../../../core/widgets/vip_phone_field.dart';
+import '../../../../core/widgets/vip_svg_icon.dart';
 import '../../../../core/widgets/vip_text_field.dart';
 import '../cubit/auth_cubit.dart';
 import '../cubit/auth_state.dart';
 
-/// Formulaire de connexion - 100 % StatelessWidget, SRP & concis.
+/// Formulaire de connexion - 100 % StatelessWidget, SRP & SVG.
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
 
@@ -26,22 +27,22 @@ class LoginForm extends StatelessWidget {
           children: [
             // 1. Champ Identifiant (+216 🇹🇳)
             VipPhoneField(
-              label: 'Courriel ou Téléphone d\'entreprise',
-              badgeText: 'Protégé SSL',
+              label: 'Courriel professionnel ou N° Tunisien (+216)',
+              badgeText: 'SSL Monétique Tunisie',
               initialValue: state.loginIdentifier,
               enabled: !isLoading,
               onChanged: cubit.updateLoginIdentifier,
             ),
             16.verticalSpace,
 
-            // 2. Champ Mot de passe
+            // 2. Champ Mot de passe avec icône SVG
             VipTextField(
-              label: 'Mot de passe personnel',
+              label: 'Mot de passe confidentiel',
               hint: '••••••••••••',
               initialValue: state.loginPassword,
               obscureText: state.obscurePassword,
               enabled: !isLoading,
-              leadingIcon: Icons.lock_outline_rounded,
+              leadingWidget: const VipSvgIcon('ssl_lock', size: 18, color: AppColors.onSurfaceVariant),
               onChanged: cubit.updateLoginPassword,
               trailing: GestureDetector(
                 onTap: cubit.togglePasswordVisibility,
@@ -62,7 +63,7 @@ class LoginForm extends StatelessWidget {
               children: [
                 VipCheckbox(
                   value: state.rememberDevice,
-                  label: 'Mémoriser cet appareil VIP',
+                  label: 'Mémoriser ce terminal VIP',
                   onChanged: cubit.toggleRememberDevice,
                 ),
                 Container(
@@ -86,7 +87,7 @@ class LoginForm extends StatelessWidget {
 
             // 4. Bouton CTA Doré Majeur
             VipGoldButton(
-              text: 'Se Connecter à l\'espace Concierge',
+              text: 'Accéder à la Conciergerie VIP Tunis',
               isLoading: isLoading,
               onPressed: cubit.login,
             ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
+import '../../../../core/widgets/vip_svg_icon.dart';
 
 /// Bandeau de témoignage d'un membre VIP sur le tarmac de Tunis-Carthage.
 class RegisterTestimonialCard extends StatelessWidget {
@@ -24,10 +25,12 @@ class RegisterTestimonialCard extends StatelessWidget {
               color: AppColors.primaryContainer,
               shape: BoxShape.circle,
             ),
-            child: Icon(
-              Icons.person_pin_rounded,
-              color: const Color(0xFFFEC325),
-              size: 22.sp,
+            child: const Center(
+              child: VipSvgIcon(
+                'carthage_shield',
+                size: 20,
+                color: Color(0xFFFEC325),
+              ),
             ),
           ),
           12.horizontalSpace,
@@ -46,7 +49,7 @@ class RegisterTestimonialCard extends StatelessWidget {
                 ),
                 2.verticalSpace,
                 Text(
-                  'S. Mansour — Membre Élite depuis 2023',
+                  'S. Mansour — Membre Élite Tunis depuis 2023',
                   style: AppTypography.labelSm.copyWith(
                     color: AppColors.secondary,
                     fontWeight: FontWeight.w800,

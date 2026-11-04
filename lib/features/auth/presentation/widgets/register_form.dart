@@ -6,13 +6,14 @@ import '../../../../core/theme/app_typography.dart';
 import '../../../../core/widgets/vip_checkbox.dart';
 import '../../../../core/widgets/vip_gold_button.dart';
 import '../../../../core/widgets/vip_phone_field.dart';
+import '../../../../core/widgets/vip_svg_icon.dart';
 import '../../../../core/widgets/vip_text_field.dart';
 import '../cubit/auth_cubit.dart';
 import '../cubit/auth_state.dart';
 import 'password_strength_meter.dart';
 import 'register_testimonial_card.dart';
 
-/// Formulaire d'accréditation et de création de compte VIP - 100 % StatelessWidget & SRP.
+/// Formulaire d'accréditation VIP AutoLoc Tunisie - 100 % StatelessWidget, SRP & SVG.
 class RegisterForm extends StatelessWidget {
   const RegisterForm({super.key});
 
@@ -26,9 +27,9 @@ class RegisterForm extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 1. Nom & Prénom complet
+            // 1. Nom & Prénom complet selon CIN ou Passeport
             VipTextField(
-              label: 'Nom & Prénom complet',
+              label: 'Nom & Prénom (selon CIN ou Passeport)',
               hint: 'ex. Karim Ben Salem',
               initialValue: state.registerFullName,
               isRequired: true,
@@ -43,23 +44,23 @@ class RegisterForm extends StatelessWidget {
             ),
             14.verticalSpace,
 
-            // 2. Numéro de téléphone portable (OTP Express)
+            // 2. Numéro de téléphone portable tunisien
             VipPhoneField(
-              label: 'Numéro de téléphone mobile',
-              badgeText: 'OTP Express',
+              label: 'Numéro mobile tunisien (+216 🇹🇳)',
+              badgeText: 'OTP Express Tunisie',
               initialValue: state.registerPhone,
               enabled: !isLoading,
               onChanged: cubit.updateRegisterPhone,
             ),
             14.verticalSpace,
 
-            // 3. Adresse e-mail
+            // 3. Adresse e-mail officielle ou d'ambassade
             VipTextField(
               label: state.isBusinessProfile
-                  ? 'Adresse e-mail professionnelle'
-                  : 'Adresse e-mail personnelle',
+                  ? 'Courriel professionnel d\'entreprise'
+                  : 'Courriel personnel ou diplomatique',
               hint: state.isBusinessProfile
-                  ? 'direction@holding-vip.tn'
+                  ? 'direction@holding-carthage.tn'
                   : 'karim@gmail.com',
               initialValue: state.registerEmail,
               isRequired: true,
@@ -70,7 +71,7 @@ class RegisterForm extends StatelessWidget {
             ),
             14.verticalSpace,
 
-            // 4. Mot de passe + Jauge de force
+            // 4. Mot de passe confidentiel avec SVG SSL
             VipTextField(
               label: 'Mot de passe confidentiel',
               hint: '••••••••••••',
@@ -78,7 +79,7 @@ class RegisterForm extends StatelessWidget {
               isRequired: true,
               obscureText: state.obscurePassword,
               enabled: !isLoading,
-              leadingIcon: Icons.lock_outline_rounded,
+              leadingWidget: const VipSvgIcon('ssl_lock', size: 18, color: AppColors.onSurfaceVariant),
               onChanged: cubit.updateRegisterPassword,
               trailing: GestureDetector(
                 onTap: cubit.togglePasswordVisibility,
@@ -110,12 +111,12 @@ class RegisterForm extends StatelessWidget {
 
             // 5. Permis de conduire (Optionnel / Clé numérique)
             VipTextField(
-              label: 'Numéro de permis de conduire',
-              hint: 'ex. 12/345678 ou Permis International',
-              badgeText: 'Clé numérique (Optionnel)',
+              label: 'Numéro de permis tunisien ou international',
+              hint: 'ex. 12/345678 ou Permis Diplomatique',
+              badgeText: 'Clé Tarmac Pass (Optionnel)',
               initialValue: state.registerLicense,
               enabled: !isLoading,
-              leadingIcon: Icons.directions_car_rounded,
+              leadingWidget: const VipSvgIcon('car_luxury', size: 18, color: AppColors.onSurfaceVariant),
               onChanged: cubit.updateRegisterLicense,
               trailing: Icon(
                 Icons.photo_camera_outlined,
@@ -133,17 +134,17 @@ class RegisterForm extends StatelessWidget {
             ),
             16.verticalSpace,
 
-            // 6. Conditions Générales & Protocole IA d'Inspection
+            // 6. Conditions Générales & Protocole IA certifié INPDP Tunisie (Loi 2004-63)
             VipCheckbox(
               value: state.agreeTerms,
-              label: 'J\'accepte les Conditions Générales VIP et le protocole IA.',
+              label: 'J\'accepte les Conditions Générales AutoLoc et le protocole IA certifié conforme à la Loi Tunisienne N° 2004-63 (INPDP).',
               onChanged: cubit.toggleAgreeTerms,
             ),
             18.verticalSpace,
 
             // 7. Bouton Primaire Doré
             VipGoldButton(
-              text: 'Créer mon compte VIP',
+              text: 'Valider mon Accréditation VIP Tunis',
               isLoading: isLoading,
               onPressed: cubit.register,
             ),
@@ -153,7 +154,7 @@ class RegisterForm extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.lock_rounded, size: 13.sp, color: AppColors.secondary),
+                const VipSvgIcon('ssl_lock', size: 14, color: AppColors.secondary),
                 4.horizontalSpace,
                 Text(
                   'Données 256-bit SSL',
@@ -166,10 +167,10 @@ class RegisterForm extends StatelessWidget {
                 8.horizontalSpace,
                 Text('•', style: TextStyle(color: AppColors.outline, fontSize: 10.sp)),
                 8.horizontalSpace,
-                Icon(Icons.stars_rounded, size: 13.sp, color: AppColors.secondary),
+                const VipSvgIcon('carthage_shield', size: 14, color: AppColors.secondary),
                 4.horizontalSpace,
                 Text(
-                  'Priorité Salon VIP',
+                  'Priorité Salon Carthage 24/7',
                   style: AppTypography.labelSm.copyWith(
                     color: AppColors.onSurfaceVariant,
                     fontSize: 10.sp,

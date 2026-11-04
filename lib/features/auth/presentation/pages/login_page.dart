@@ -100,7 +100,7 @@ class LoginPage extends StatelessWidget {
                         // VUE 1 : Connexion
                         if (isLogin) ...[
                           Text(
-                            'Accédez à votre conciergerie mobile et pilotez vos réservations VIP à l\'Aéroport Tunis-Carthage en temps réel.',
+                            'Accédez à votre conciergerie privée et pilotez vos réservations de berlines d\'exception à l\'Aéroport International Tunis-Carthage & Enfidha en temps réel.',
                             style: AppTypography.bodyMd.copyWith(
                               color: AppColors.onSurfaceVariant,
                               fontSize: 13.sp,

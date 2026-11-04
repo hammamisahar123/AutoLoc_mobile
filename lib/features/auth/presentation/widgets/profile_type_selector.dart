@@ -6,7 +6,7 @@ import '../../../../core/theme/app_typography.dart';
 import '../cubit/auth_cubit.dart';
 import '../cubit/auth_state.dart';
 
-/// Sélecteur de type de compte VIP - 100 % StatelessWidget, concis et modulaire.
+/// Sélecteur de type de compte VIP Tunisie - 100 % StatelessWidget.
 class ProfileTypeSelector extends StatelessWidget {
   const ProfileTypeSelector({super.key});
 
@@ -31,14 +31,14 @@ class ProfileTypeSelector extends StatelessWidget {
                 children: [
                   _ProfileOptionCard(
                     title: 'Particulier',
-                    subtitle: 'Livraison hôtel & aéroport',
+                    subtitle: 'Côtes de Carthage & Tarmac',
                     icon: Icons.person_rounded,
                     isSelected: !isBusiness,
                     onTap: () => cubit.setBusinessProfile(false),
                   ),
                   _ProfileOptionCard(
                     title: 'VIP Business',
-                    subtitle: 'TVA Déductible & Facture',
+                    subtitle: 'Matricule Fiscal (MF) & TND',
                     icon: Icons.corporate_fare_rounded,
                     isSelected: isBusiness,
                     accentSubtitle: true,
@@ -48,7 +48,7 @@ class ProfileTypeSelector extends StatelessWidget {
               ),
             ),
 
-            // Avantage fiscal si Business
+            // Avantage fiscal Tunisie si Business
             if (isBusiness) ...[
               12.verticalSpace,
               Container(
@@ -66,7 +66,7 @@ class ProfileTypeSelector extends StatelessWidget {
                     Expanded(
                       child: RichText(
                         text: TextSpan(
-                          text: 'Avantage Flotte Premium : ',
+                          text: 'Avantage Flotte Premium Tunisie : ',
                           style: AppTypography.labelSm.copyWith(
                             color: AppColors.primaryContainer,
                             fontWeight: FontWeight.w800,
@@ -75,7 +75,7 @@ class ProfileTypeSelector extends StatelessWidget {
                           children: [
                             TextSpan(
                               text:
-                                  'Gestion du matricule fiscal et facturation centralisée trimestrielle avec chauffeur bilingue inclus.',
+                                  'Facturation centralisée trimestrielle en Dinars Tunisiens (TND) avec TVA récupérable et chauffeur bilingue inclus.',
                               style: AppTypography.bodySm.copyWith(
                                 color: AppColors.onSurfaceVariant,
                                 fontSize: 11.sp,

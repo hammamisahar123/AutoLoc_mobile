@@ -10,6 +10,7 @@ class VipTextField extends StatelessWidget {
   final String initialValue;
   final ValueChanged<String> onChanged;
   final IconData? leadingIcon;
+  final Widget? leadingWidget;
   final Widget? trailing;
   final String? badgeText;
   final bool isRequired;
@@ -24,6 +25,7 @@ class VipTextField extends StatelessWidget {
     required this.initialValue,
     required this.onChanged,
     this.leadingIcon,
+    this.leadingWidget,
     this.trailing,
     this.badgeText,
     this.isRequired = false,
@@ -37,7 +39,7 @@ class VipTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // En-tête : Label + Astérisque + Badge optionnel
+        // En-tête : Label + Astérisque + Badge optionnel (Zero Overflow)
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -93,7 +95,10 @@ class VipTextField extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 2.h),
           child: Row(
             children: [
-              if (leadingIcon != null) ...[
+              if (leadingWidget != null) ...[
+                leadingWidget!,
+                10.horizontalSpace,
+              ] else if (leadingIcon != null) ...[
                 Icon(leadingIcon, size: 18.sp, color: AppColors.onSurfaceVariant),
                 10.horizontalSpace,
               ],
