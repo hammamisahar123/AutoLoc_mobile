@@ -28,16 +28,16 @@ class SplashPage extends StatelessWidget {
 
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is Authenticated) {
+        if (state.status == AuthStatus.authenticated && state.user != null) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Session active : M/Mme ${state.user.fullName} (VIP)'),
+              content: Text('Session active : M/Mme ${state.user!.fullName} (VIP)'),
               backgroundColor: AppColors.secondary,
               behavior: SnackBarBehavior.floating,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.r)),
             ),
           );
-        } else if (state is Unauthenticated) {
+        } else if (state.status == AuthStatus.unauthenticated) {
           // Aucun utilisateur -> Redirection fluide vers la page de Connexion VIP
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(

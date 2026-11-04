@@ -1,45 +1,57 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../domain/entities/user_entity.dart';
 
-/// Classe de base abstraite pour tous les états d'authentification.
-abstract class AuthState extends Equatable {
-  const AuthState();
+part 'auth_state.freezed.dart';
 
-  @override
-  List<Object?> get props => [];
+/// Statut global du cycle de vie de l'authentification.
+enum AuthStatus {
+  initial,
+  loading,
+  authenticated,
+  unauthenticated,
+  error,
 }
 
-/// 1. État initial au tout premier lancement de l'application.
-class AuthInitial extends AuthState {
-  const AuthInitial();
+/// Onglet d'authentification actif (Connexion vs Inscription).
+enum AuthTab {
+  login,
+  register,
 }
 
-/// 2. État de chargement (le Splash vérifie la session, ou l'utilisateur attend après avoir cliqué sur Se Connecter).
-class AuthLoading extends AuthState {
-  const AuthLoading();
+/// Langue sélectionnée dans l'application.
+enum AppLanguage {
+  fr,
+  en,
+  ar,
 }
 
-/// 3. L'utilisateur est connecté ! Il contient l'objet UserEntity (avec son nom, son statut VIP, etc.).
-class Authenticated extends AuthState {
-  final UserEntity user;
+/// État global et immuable de l'authentification généré par Freezed.
+/// - Sépare à 100 % la logique et les données de l'interface (UI).
+/// - Permet des widgets d'affichage 100 % Stateless.
+@freezed
+abstract class AuthState with _$AuthState {
+  const factory AuthState({
+    @Default(AuthStatus.initial) AuthStatus status,
+    UserEntity? user,
+    String? errorMessage,
 
-  const Authenticated(this.user);
+    // États d'interface & navigation (gérés par le Cubit)
+    @Default(AuthTab.login) AuthTab selectedTab,
+    @Default(AppLanguage.fr) AppLanguage language,
+    @Default(false) bool isBusinessProfile,
+    @Default(true) bool obscurePassword,
+    @Default(true) bool rememberDevice,
+    @Default(true) bool agreeTerms,
 
-  @override
-  List<Object?> get props => [user];
-}
+    // Champs du formulaire de Connexion
+    @Default('contact@ambassade.tn') String loginIdentifier,
+    @Default('secret123') String loginPassword,
 
-/// 4. Aucun utilisateur connecté (le Splash sait qu'il doit afficher la page de Login).
-class Unauthenticated extends AuthState {
-  const Unauthenticated();
-}
-
-/// 5. Une erreur est survenue (mauvais mot de passe, réseau indisponible, etc.).
-class AuthError extends AuthState {
-  final String message;
-
-  const AuthError(this.message);
-
-  @override
-  List<Object?> get props => [message];
+    // Champs du formulaire d'Inscription
+    @Default('Karim Ben Salem') String registerFullName,
+    @Default('98 123 456') String registerPhone,
+    @Default('karim.bensalem@ambassade-vip.tn') String registerEmail,
+    @Default('Monaco2026#') String registerPassword,
+    @Default('') String registerLicense,
+  }) = _AuthState;
 }

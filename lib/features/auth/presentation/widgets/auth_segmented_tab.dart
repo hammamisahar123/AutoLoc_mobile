@@ -1,49 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
+import '../cubit/auth_cubit.dart';
+import '../cubit/auth_state.dart';
 
-/// Commutateur d'onglets segmented (Connexion / Inscription) fluide et ergonomique.
+/// Commutateur d'onglets (Connexion / Inscription) - 100 % StatelessWidget.
+/// L'état de l'onglet actif est géré directement par AuthCubit.
 class AuthSegmentedTab extends StatelessWidget {
-  final int selectedIndex;
-  final ValueChanged<int> onTabChanged;
-
-  const AuthSegmentedTab({
-    super.key,
-    required this.selectedIndex,
-    required this.onTabChanged,
-  });
+  const AuthSegmentedTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(4.r),
-      decoration: BoxDecoration(
-        color: const Color(0xFFDCE9FF), // surface-container-high
-        borderRadius: BorderRadius.circular(14.r),
-      ),
-      child: Row(
-        children: [
-          // Onglet 0: Connexion
-          Expanded(
-            child: _TabButton(
-              title: 'Connexion',
-              icon: Icons.vpn_key_rounded,
-              isSelected: selectedIndex == 0,
-              onTap: () => onTabChanged(0),
-            ),
+    return BlocBuilder<AuthCubit, AuthState>(
+      buildWhen: (prev, curr) => prev.selectedTab != curr.selectedTab,
+      builder: (context, state) {
+        final isLogin = state.selectedTab == AuthTab.login;
+
+        return Container(
+          padding: EdgeInsets.all(4.r),
+          decoration: BoxDecoration(
+            color: const Color(0xFFDCE9FF), // surface-container-high
+            borderRadius: BorderRadius.circular(14.r),
           ),
-          // Onglet 1: Inscription
-          Expanded(
-            child: _TabButton(
-              title: 'Inscription',
-              icon: Icons.person_add_rounded,
-              isSelected: selectedIndex == 1,
-              onTap: () => onTabChanged(1),
-            ),
+          child: Row(
+            children: [
+              // Onglet Connexion
+              Expanded(
+                child: _TabButton(
+                  title: 'Connexion',
+                  icon: Icons.vpn_key_rounded,
+                  isSelected: isLogin,
+                  onTap: () => context.read<AuthCubit>().setTab(AuthTab.login),
+                ),
+              ),
+              // Onglet Inscription
+              Expanded(
+                child: _TabButton(
+                  title: 'Inscription',
+                  icon: Icons.person_add_rounded,
+                  isSelected: !isLogin,
+                  onTap: () => context.read<AuthCubit>().setTab(AuthTab.register),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

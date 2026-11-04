@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
+import '../cubit/auth_cubit.dart';
+import '../cubit/auth_state.dart';
 
-/// Bannière supérieure de prestige avec sélecteur de langue, badge VIP et statut Lounge.
-class LoginHeaderBanner extends StatefulWidget {
+/// Bannière supérieure de prestige - 100 % StatelessWidget.
+/// L'état de la langue est géré par AuthCubit.
+class LoginHeaderBanner extends StatelessWidget {
   const LoginHeaderBanner({super.key});
-
-  @override
-  State<LoginHeaderBanner> createState() => _LoginHeaderBannerState();
-}
-
-class _LoginHeaderBannerState extends State<LoginHeaderBanner> {
-  String _selectedLanguage = 'FR';
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +36,7 @@ class _LoginHeaderBannerState extends State<LoginHeaderBanner> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 1. Barre d'utilité haute (Marque + Sélecteur de langue + Badge VIP)
+              // 1. Barre d'utilité haute
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -75,50 +72,25 @@ class _LoginHeaderBannerState extends State<LoginHeaderBanner> {
                   // Sélecteur de langue + Badge VIP
                   Row(
                     children: [
-                      Container(
-                        padding: EdgeInsets.all(3.r),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(999.r),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: ['FR', 'EN', 'عربي'].map((lang) {
-                            final isSelected = _selectedLanguage == lang;
-                            return GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _selectedLanguage = lang;
-                                });
-                              },
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 200),
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 8.w,
-                                  vertical: 4.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: isSelected
-                                      ? AppColors.secondary
-                                      : Colors.transparent,
-                                  borderRadius: BorderRadius.circular(999.r),
-                                ),
-                                child: Text(
-                                  lang,
-                                  style: AppTypography.labelSm.copyWith(
-                                    color: isSelected
-                                        ? const Color(0xFF251A00)
-                                        : Colors.white.withValues(alpha: 0.75),
-                                    fontWeight: isSelected
-                                        ? FontWeight.w800
-                                        : FontWeight.w500,
-                                    fontSize: 10.sp,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }).toList(),
-                        ),
+                      BlocBuilder<AuthCubit, AuthState>(
+                        buildWhen: (prev, curr) => prev.language != curr.language,
+                        builder: (context, state) {
+                          return Container(
+                            padding: EdgeInsets.all(3.r),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(999.r),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                _buildLangChip(context, 'FR', AppLanguage.fr, state.language),
+                                _buildLangChip(context, 'EN', AppLanguage.en, state.language),
+                                _buildLangChip(context, 'عربي', AppLanguage.ar, state.language),
+                              ],
+                            ),
+                          );
+                        },
                       ),
                       8.horizontalSpace,
                       Container(
@@ -140,7 +112,7 @@ class _LoginHeaderBannerState extends State<LoginHeaderBanner> {
               ),
               20.verticalSpace,
 
-              // 2. Badge du salon VIP Tunis-Carthage
+              // 2. Badge salon VIP
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
                 decoration: BoxDecoration(
@@ -173,7 +145,7 @@ class _LoginHeaderBannerState extends State<LoginHeaderBanner> {
               ),
               8.verticalSpace,
 
-              // 3. Titre d'accueil chaleureux
+              // 3. Titre
               Text(
                 'Bon retour parmi nous',
                 style: AppTypography.headlineXl.copyWith(
@@ -184,6 +156,39 @@ class _LoginHeaderBannerState extends State<LoginHeaderBanner> {
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLangChip(
+    BuildContext context,
+    String label,
+    AppLanguage lang,
+    AppLanguage currentLang,
+  ) {
+    final isSelected = currentLang == lang;
+    return GestureDetector(
+      onTap: () => context.read<AuthCubit>().setLanguage(lang),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        padding: EdgeInsets.symmetric(
+          horizontal: 8.w,
+          vertical: 4.h,
+        ),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.secondary : Colors.transparent,
+          borderRadius: BorderRadius.circular(999.r),
+        ),
+        child: Text(
+          label,
+          style: AppTypography.labelSm.copyWith(
+            color: isSelected
+                ? const Color(0xFF251A00)
+                : Colors.white.withValues(alpha: 0.75),
+            fontWeight: isSelected ? FontWeight.w800 : FontWeight.w500,
+            fontSize: 10.sp,
           ),
         ),
       ),

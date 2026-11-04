@@ -85,11 +85,8 @@ class BiometricAccessCard extends StatelessWidget {
                   content: Text('Vérification biométrique Face ID réussie.'),
                 ),
               );
-              // Connexion directe par biométrie VIP
-              context.read<AuthCubit>().login(
-                    identifier: 'sahar.vip@autoloc.tn',
-                    password: 'secret_biometric_pass',
-                  );
+              // Connexion directe par biométrie VIP via Cubit
+              context.read<AuthCubit>().loginBiometric();
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
