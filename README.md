@@ -1,173 +1,226 @@
-# AutoLoc — Executive Concierge Mobility (Tunisie) 🇹🇳 ✨
+# 🚗 AutoLoc — Executive Concierge Mobility (Tunisie) 🇹🇳 ✨
 
 <p align="center">
-  <img src="assets/icons/tunisia_flag.svg" alt="Tunisia Flag" width="48" height="32" />
+  <img src="assets/icons/tunisia_flag.svg" alt="Tunisie" width="56" height="36" />
   <br />
-  <strong>Plateforme Mobile de Conciergerie Automobile Haut de Gamme & Location de Prestige</strong>
+  <strong>La Première Solution Mobile de Conciergerie Automobile Privée & Location de Prestige en Tunisie</strong>
   <br />
-  <em>Conçue pour le Salon d'Honneur de l'Aéroport International Tunis-Carthage, les Ambassades et les Voyageurs d'Affaires.</em>
+  <em>Salon d'Honneur de l'Aéroport International Tunis-Carthage (TUN) • Enfidha-Hammamet • Berges du Lac 2 • Côtes de Carthage</em>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-3.29+-02569B?logo=flutter&logoColor=white" alt="Flutter" />
+  <img src="https://img.shields.io/badge/Dart-3.9+-0175C2?logo=dart&logoColor=white" alt="Dart" />
+  <img src="https://img.shields.io/badge/Architecture-Clean_Architecture-4CAF50" alt="Clean Architecture" />
+  <img src="https://img.shields.io/badge/State-Cubit_%2B_Freezed-blueviolet" alt="Cubit + Freezed" />
+  <img src="https://img.shields.io/badge/UI-100%25_StatelessWidget-orange" alt="Stateless" />
+  <img src="https://img.shields.io/badge/Qualité-No_Issues_Found-brightgreen" alt="No Issues" />
 </p>
 
 ---
 
-## 📌 1. Vision & Objectifs Métier
-
-**AutoLoc** réinvente la mobilité premium en Tunisie en fusionnant l'expérience d'une conciergerie privée 5 étoiles et la simplicité d'une application mobile moderne.
-
-### Problématiques Résolues :
-* **Suppression de l'attente aux comptoirs d'aéroports** : Prise en charge directe au tarmac ou au Salon d'Honneur (Terminal 1 & Terminal P2 VIP).
-* **Tarification transparente en Dinar Tunisien (TND)** : Aucun frais caché, politique de caution transparente et franchise claire.
-* **Flotte d'exception vérifiée** : Sélection exclusive de berlines de prestige, SUV VIP et citadines premium (Mercedes-Benz, Porsche, BMW, Peugeot GT Line, Volkswagen R-Line).
-* **Conformité juridique & bancaire locale** :
-  * Conformité stricte à la loi tunisienne **INPDP N° 2004-63** sur la protection des données personnelles.
-  * Passerelle de paiement sécurisée **ClicToPay** certifiée par le **GIE Monétique Tunisie**.
-  * Gestion des profils **Particulier** et **VIP Business** (avec déductibilité TVA et saisie du Matricule Fiscal - MF).
-
----
-
-## 🏛️ 2. Architecture Logicielle (Clean Architecture)
-
-Le projet respecte rigoureusement les principes de la **Clean Architecture** et du **SOLID**, garantissant une séparation stricte des responsabilités et une testabilité maximale :
-
-```
-lib/
-├── core/                               # Socle transverse partagé
-│   ├── constants/                      # Constantes globales de l'application
-│   ├── errors/                         # Gestion des échecs (Failures) et exceptions
-│   ├── theme/                          # Design System (AppColors, AppTypography, AppTheme)
-│   ├── utils/                          # Formatage monétaire (TND), dates et validateurs
-│   └── widgets/                        # Composants atomiques réutilisables
-│       ├── vip_checkbox.dart           # Case à cocher responsive sans overflow
-│       ├── vip_gold_button.dart        # Bouton d'action doré VIP (Primary CTA)
-│       ├── vip_phone_field.dart        # Saisie téléphonique avec indicatif +216 et drapeau tunisien SVG
-│       ├── vip_svg_icon.dart           # Chargeur optimisé d'icônes vectorielles SVG
-│       └── vip_text_field.dart         # Champ de saisie haute sécurité avec astérisques et ombrage
-│
-└── features/                           # Modules métiers indépendants
-    ├── splash/                         # Écran de démarrage & transition native Android 12+
-    ├── auth/                           # Authentification VIP (Connexion & Inscription)
-    │   ├── domain/                     # Entités (UserEntity) & Contrats (AuthRepository)
-    │   ├── data/                       # Modèles & Implémentation Mock/API
-    │   └── presentation/               # Cubit (Freezed) & Widgets organisés en sous-dossiers
-    │       ├── headers/                # En-têtes thématiques Midnight Navy
-    │       ├── forms/                  # Formulaires de connexion et inscription VIP
-    │       ├── cards/                  # Badges biométriques, témoignages et conformité Monétique
-    │       └── pages/                  # LoginPage (100 % StatelessWidget)
-    │
-    └── vehicles/                       # Découverte de la Flotte & Conciergerie (Explore)
-        ├── domain/                     # VehicleEntity & VehicleRepository
-        ├── data/                       # VehicleModel & MockVehicleRepository
-        └── presentation/               # ExploreCubit, ExploreState (Freezed) & Widgets
-            ├── header/                 # ExploreHeaderBar (Monogramme AL, sélecteur Tunis-Carthage)
-            ├── concierge/              # ConciergeBookingCard & ConciergeGuaranteeCard
-            ├── filters/                # CategoryFilterScroller & FleetInventoryHeader
-            ├── cards/                  # VehicleCard & VehicleSpecChip
-            ├── navigation/             # VipFloatingBottomNav (Barre flottante 5 onglets)
-            └── pages/                  # ExplorePage (100 % StatelessWidget)
-```
+## 📑 Sommaire
+1. [🌟 Vision & Objectifs de la Solution](#-1-vision--objectifs-de-la-solution)
+2. [💎 Les Avantages Clés pour le Client & l'Agence](#-2-les-avantages-clés-pour-le-client--lagence)
+3. [📱 Galerie Visuelle & Fonctionnalités Complètes (Avec Captures)](#-3-galerie-visuelle--fonctionnalités-complètes)
+   - [A. Connexion & Inscription VIP Sur-Mesure](#a-connexion--inscription-vip-sur-mesure)
+   - [B. Découverte de la Flotte & Conciergerie Express](#b-découverte-de-la-flotte--conciergerie-express)
+   - [C. Fiche Véhicule & Add-ons Exclusifs](#c-fiche-véhicule--add-ons-exclusifs)
+   - [D. Inspection Numérique 360° sans Litige](#d-inspection-numérique-360-sans-litige)
+   - [E. Contrat Numérique & Signature Électronique](#e-contrat-numérique--signature-électronique)
+   - [F. Suivi Concierge Tarmac en Temps Réel](#f-suivi-concierge-tarmac-en-temps-réel)
+   - [G. Pilotage de la Location Active & Extension 1-Clic](#g-pilotage-de-la-location-active--extension-1-clic)
+4. [🏛️ Architecture Logicielle & Choix Technologiques](#-4-architecture-logicielle--choix-technologiques)
+5. [🚀 Guide de Lancement & Commandes Utiles](#-5-guide-de-lancement--commandes-utiles)
 
 ---
 
-## ⚡ 3. Principes Techniques & Bonnes Pratiques
+## 🌟 1. Vision & Objectifs de la Solution
 
-### A. 100 % StatelessWidget & Zéro `setState`
-Aucun widget de présentation n'est `StatefulWidget`. L'intégralité du cycle de vie et des états d'interface (saisie de formulaire, visibilité de mot de passe, sélection de profil particulier/business, filtres de flotte, sélection de dates et favoris) est centralisée dans les états immuables des **Cubits**.
+En Tunisie, la location de voitures traditionnelle souffre de points de friction majeurs :
+* **Files d'attente interminables** aux comptoirs des aéroports après un vol long-courrier.
+* **Paperasse manuscrite lente et archaïque**, source d'erreurs et de retards.
+* **Manque de transparence tarifaire** (cautions bloquées excessives, litiges sur l'état des lieux au retour).
+* **Absence de services de mobilité de luxe dédiés** aux délégations diplomatiques, chefs d'entreprises et personnalités VIP.
 
-### B. State Management : `flutter_bloc` (Cubit) + `freezed`
-* **Immuabilité garantie** : Les états sont générés avec le package `freezed` (`copyWith`, égalité structurelle).
-* **Séparation UI / Logique** : L'interface se contente d'émettre des événements métier (`context.read<AuthCubit>().login(...)`, `context.read<ExploreCubit>().selectCategory(...)`).
-* **Réactivité ciblée** : Utilisation de `buildWhen` et `listenWhen` pour minimiser les reconstructions de widgets et garantir 60/120 FPS.
-
-### C. Single Responsibility Principle (SRP) & Code Concis
-* Chaque composant d'interface possède une responsabilité unique et réside dans son propre fichier.
-* Tailles de fichiers strictement maîtrisées (< 100 à 150 lignes).
-* Utilisation systématique de fichiers baril (`widgets.dart`) par feature pour des imports propres et standardisés.
-
-### D. Responsive Design System (`flutter_screenutil`)
-* **Taille de référence** : 390 x 844 px (iPhone / Pixel standard).
-* Unités responsives appliquées systématiquement : `.w`, `.h`, `.sp`, `.r`, `verticalSpace`, `horizontalSpace`.
-* **Protection Zero Overflow** : Chaque ligne (`Row`) contenant du texte dynamique ou des étiquettes est encapsulée dans `Flexible(fit: FlexFit.loose)` avec `TextOverflow.ellipsis`, évitant tout dépassement jaune et noir sur écrans étroits.
-
-### E. Charte Graphique & Identité Visuelle
-* **Midnight Navy** (`#0B192C`) : Couleur primaire dominante représentant l'autorité, la discrétion diplomatique et le prestige.
-* **Mustard Gold** (`#F1B814` / `#FEC325`) : Couleur secondaire accentuant l'exclusivité VIP, les boutons d'action clés et les badges souverains.
-* **Icônes Vectorielles SVG** : Fichiers SVG légers et nets à toutes les densités d'écran (`carthage_shield`, `tunisia_flag`, `vip_crown`, `car_luxury`, etc.).
+### 🎯 Les Objectifs d'AutoLoc :
+1. **Digitaliser 100 % du parcours client** : De la réservation jusqu'à la restitution du véhicule, sans aucun formulaire papier.
+2. **Garantir un accueil Tarmac / Salon VIP** : Remise directe des clés sur le tarmac de Tunis-Carthage ou au Salon d'Honneur (Terminal 1 / Terminal VIP P2).
+3. **Assurer une transparence financière totale en Dinars Tunisiens (TND)** : Aucun frais caché, politique "Garantie AutoLoc DADA" avec zéro frais de restitution.
+4. **Respecter scrupuleusement la réglementation tunisienne** :
+   * Protection stricte des données personnelles selon la **Loi INPDP N° 2004-63**.
+   * Intégration de la passerelle de paiement **ClicToPay** certifiée par le **GIE Monétique Tunisie**.
+   * Gestion avancée de la **TVA déductible** et du **Matricule Fiscal (MF)** pour les comptes entreprises.
 
 ---
 
-## 🚀 4. Fonctionnalités Implémentées
+## 💎 2. Les Avantages Clés pour le Client & l'Agence
 
-### 1. Native Splash & Splash Screen
-* Configuration de l'API Android 12+ (`values-v31/styles.xml`) supprimant le double flash d'icône natif.
-* Écran Splash animé avec indicateur de flotte active (`TUN FLEET ACTIVE • TIER 1 SOVEREIGN`).
-
-### 2. Module d'Authentification VIP (`auth`)
-* **Connexion VIP** : Identifiant e-mail/mobile, mot de passe confidentiel avec bascule d'affichage, mémorisation d'appareil sécurisée.
-* **Inscription VIP sur-mesure** :
-  * Sélecteur de statut : **Particulier** (Livraison hôtel & aéroport) vs **VIP Business** (Déductibilité fiscale, champ Matricule Fiscal).
-  * Jauge interactive de robustesse de mot de passe (8+ car., chiffre, majuscule).
-  * Numéro de permis de conduire avec option clé numérique smartphone.
-  * Sélecteur de langue international (**FR**, **EN**, **عربي**).
-  * Authentification biométrique Face ID / Tarmac Pass & SSO Diplomatique (Apple ID / Google Suite).
-
-### 3. Découverte de la Flotte & Conciergerie (`vehicles`)
-* **En-tête Supérieur** : Monogramme AL, sélecteur dynamique Tunis-Carthage (TUN), notifications avec badge et avatar profil.
-* **Carte de Réservation Conciergerie** :
-  * Sélecteur du lieu de prise en charge (Aéroport Tunis-Carthage Terminal 1).
-  * Bascule "Retour au même emplacement" avec garantie 0 DT de frais de restitution.
-  * Période de location unifiée avec calcul automatique de la durée en jours.
-  * Sélecteur d'agence : **Aéroport VIP P2** vs **Berges du Lac 2**.
-  * Bouton principal doré de recherche de véhicules.
-* **Filtres de Flotte par Catégories** : Puces horizontales avec décompte (Tous les véhicules, Citadine, Berline, SUV & 4x4, Luxury / VIP).
-* **Garantie AutoLoc DADA** : Badge d'assurance VIP (zéro caution bloquée, remise des clés sur tarmac).
-* **Catalogue de Véhicules Haute Fidélité** :
-  * Fiches complètes avec photos studio, badge de confirmation immédiate, bouton de mise en favoris.
-  * Bande de 4 spécifications techniques (Boîte, Places, Carburant, Caractéristique clé).
-  * Affichage tarifaire double : Tarif journalier en TND et montant total de la période de location.
-* **Barre de Navigation Flottante VIP** : 5 onglets à bords arrondis (Explorer, Inspect, Livraison, Contrat, Location).
+| Pour le Client VIP / Voyageur d'Affaires | Pour l'Agence & l'Opérateur de Conciergerie |
+| :--- | :--- |
+| ⏱️ **Gain de temps record** : Réception du véhicule en moins de 3 minutes à la sortie de l'avion. | 📈 **Optimisation opérationnelle** : Moins de personnel monopolisé aux comptoirs physiques. |
+| 🛡️ **Zéro stress de caution** : Conditions de garantie claires et pré-validées. | 🔒 **Sécurisation des paiements** : ClicToPay & Monétique Tunisie avec protocoles 3D-Secure. |
+| 🚘 **Flotte d'exception garantie** : Modèle exact réservé garanti (pas de déclassement de catégorie). | 📸 **Preuve irréfutable de l'état du véhicule** : Photos horodatées et géolocalisées réduisant les litiges à 0%. |
+| 📱 **Déblocage numérique sans contact** : Clé numérique sur smartphone optionnelle. | ⚖️ **Validité légale immédiate** : Contrats certifiés horodatés archivés numériquement. |
+| 🛎️ **Conciergerie 24/7 incluse** : Chauffeur privé, assistance bilingue, accès salons d'aéroports. | 🔄 **Revenus récurrents maximisés** : Extension de location en 1 clic directement dans l'application. |
 
 ---
 
-## 🛠️ 5. Installation & Lancement
+## 📱 3. Galerie Visuelle & Fonctionnalités Complètes
+
+### A. Connexion & Inscription VIP Sur-Mesure
+Un accueil visuel haut de gamme en **Midnight Navy** et **Or Moutarde**. L'utilisateur choisit entre compte **Particulier** et **VIP Business** avec contrôle de robustesse du mot de passe en temps réel et sélection de la langue (**Français, Anglais, Arabe**).
+
+<p align="center">
+  <img src="docs/screenshots/01_inscription_vip.png" alt="Inscription VIP AutoLoc" width="310" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/02_validation_vip.png" alt="Validation VIP Formulaire" width="310" />
+</p>
+
+* **Bascule instantanée** : Connexion simplifiée (e-mail, mot de passe avec affichage sécurisé, Face ID / Tarmac Pass).
+* **Compte Entreprise** : Champ dédié au Matricule Fiscal tunisien pour facturation avec TVA déductible.
+* **Sécurité renforcée** : Jauge de complexité mot de passe (8+ car., chiffre, majuscule) et stockage token chiffré AES-256.
+
+---
+
+### B. Découverte de la Flotte & Conciergerie Express
+L'écran d'exploration rassemble la recherche de conciergerie à l'Aéroport Tunis-Carthage (Terminal 1 & Terminal P2) et le catalogue de berlines de prestige.
+
+<p align="center">
+  <img src="docs/screenshots/03_explore_flotte.png" alt="Découverte de la flotte AutoLoc" width="360" />
+</p>
+
+* **Filtres dynamiques par catégorie** : Tous les véhicules, Citadines premium, Berlines d'affaires, SUV & 4x4, Luxury / VIP.
+* **Fiches techniques précises** : Transmission automatique, nombre de places, motorisation (Diesel, Essence, Hybride), caractéristiques exclusives (KM illimité, Apple CarPlay, toit panoramique).
+* **Tarification claire** : Prix par jour en TND et montant total de la période de location sélectionnée.
+* **Barre de navigation flottante VIP** : 5 raccourcis arrondis (Explorer, Inspecter, Livraison, Contrat, Location).
+
+---
+
+### C. Fiche Véhicule & Add-ons Exclusifs
+Présentation détaillée du modèle sélectionné avec options de conciergerie à la carte.
+
+<p align="center">
+  <img src="docs/screenshots/04_details_vehicule.png" alt="Détails du véhicule et add-ons" width="360" />
+</p>
+
+* **Galerie photo studio** : Vues extérieure 3/4, habitacle cuir et finitions de luxe.
+* **Add-ons VIP disponibles** :
+  * 🤵 Chauffeur privé bilingue (Français / Anglais / Arabe).
+  * 💺 Siège enfant premium ISOFIX.
+  * 📶 Boîtier Wi-Fi 4G/5G haute vitesse illimité.
+  * ✈️ Pass accès Salon d'Honneur VIP Tunis-Carthage.
+
+---
+
+### D. Inspection Numérique 360° sans Litige
+Un état des lieux numérique guidé, transparent et infalsifiable avant la prise du véhicule et lors de la restitution.
+
+<p align="center">
+  <img src="docs/screenshots/05_inspection_numerique.png" alt="Inspection numérique 360" width="360" />
+</p>
+
+* **Guide photo interactif** : Capture des 4 angles de carrosserie, du niveau de carburant et du compteur kilométrique.
+* **Horodatage & Géolocalisation** : Chaque photo est certifiée par empreinte temporelle et GPS.
+* **Zéro litige** : Comparaison automatique entre l'état de départ et l'état de retour.
+
+---
+
+### E. Contrat Numérique & Signature Électronique
+Génération instantanée du contrat de location officiel en français et arabe conforme à la législation tunisienne.
+
+<p align="center">
+  <img src="docs/screenshots/06_signature_contrat.png" alt="Signature électronique du contrat" width="360" />
+</p>
+
+* **Signature tactile sur écran** : Signature biométrique fluide et réactive.
+* **Conformité juridique** : Clauses contractuelles claires, conformité INPDP Loi 2004-63.
+* **Génération PDF instantanée** : Envoyée automatiquement par e-mail et accessible hors-ligne dans l'application.
+
+---
+
+### F. Suivi Concierge Tarmac en Temps Réel
+Permet au voyageur de suivre l'approche de son chauffeur ou de sa voiture dès l'atterrissage à Tunis-Carthage.
+
+<p align="center">
+  <img src="docs/screenshots/07_suivi_tarmac_live.png" alt="Suivi Tarmac en temps réel" width="360" />
+</p>
+
+* **Carte radar en direct** : Visualisation GPS du concierge en approche du terminal.
+* **Carte chauffeur dédiée** : Photo, nom du concierge, plaque d'immatriculation tunisienne (ex: 234 TUN 5678).
+* **Communication 1-Clic** : Appel direct sécurisé ou échange via WhatsApp Business Concierge.
+
+---
+
+### G. Pilotage de la Location Active & Extension 1-Clic
+L'espace de bord durant la période de location pour prolonger son séjour ou gérer son véhicule sans se déplacer.
+
+<p align="center">
+  <img src="docs/screenshots/08_gestion_location.png" alt="Gestion de la location active" width="360" />
+</p>
+
+* **Tableau de bord connecté** : Heure exacte de restitution, niveau de carburant restant, kilomètres parcourus.
+* **Prolongation instantanée** : Ajout de 24h, 48h ou plus en 1 clic avec recalcul immédiat du tarif.
+* **Bouton d'assistance VIP 24/7** : Déclenchement rapide de dépannage ou changement de véhicule.
+
+---
+
+## 🏛️ 4. Architecture Logicielle & Choix Technologiques
+
+### A. Clean Architecture Strict
+Le projet isole parfaitement la logique métier des détails d'infrastructure :
+* **`domain/`** : Entités métier (`UserEntity`, `VehicleEntity`) et interfaces de référentiels (`AuthRepository`, `VehicleRepository`). Totalement découplé de Flutter et de toute dépendance tierce.
+* **`data/`** : Modèles sérialisables (`VehicleModel`) et implémentations locales / API (`MockVehicleRepository`).
+* **`presentation/`** : Couche d'affichage réactive avec séparation totale UI / Logique.
+
+### B. 100 % StatelessWidget & Cubit (Freezed)
+* Aucun `StatefulWidget` ni `setState()` local.
+* États prédictibles, immuables et testables générés avec `freezed`.
+* L'UI écoute l'état via `BlocBuilder` et dispatch des actions claires (`loadVehicles()`, `selectCategory()`).
+
+### C. Single Responsibility Principle (SRP)
+* Chaque widget vit dans son propre fichier (< 100 à 150 lignes).
+* Découpage en sous-dossiers thématiques (`headers/`, `forms/`, `cards/`, `filters/`, `navigation/`).
+* Centralisation des exports dans des fichiers barils `widgets.dart`.
+
+### D. Conception Responsive & Zéro Overflow
+* Calibré sur base **390 x 844 px** via `flutter_screenutil`.
+* Tous les textes imbriqués dans des lignes horizontales sont enveloppés dans des `Flexible(fit: FlexFit.loose)` avec `TextOverflow.ellipsis` pour éliminer tout risque d'overflow sur tous les formats d'écrans Android et iOS.
+
+---
+
+## 🚀 5. Guide de Lancement & Commandes Utiles
 
 ### Prérequis
-* Flutter SDK (version 3.29.0 ou supérieure)
-* Dart SDK (version 3.9.0 ou supérieure)
-* Android Studio / Xcode avec émulateur ou appareil physique configuré
+* **Flutter** : version 3.29.0 ou ultérieure
+* **Dart** : version 3.9.0 ou ultérieure
+* **Android Studio / Xcode** avec émulateur ou smartphone connecté
 
-### Étapes d'installation
+### Démarrage Rapide
 ```bash
-# 1. Cloner le dépôt
+# 1. Cloner le projet
 git clone https://github.com/hammamisahar123/AutoLoc_mobile.git
 cd AutoLoc_mobile
 
-# 2. Récupérer les dépendances
+# 2. Installer les packages
 flutter pub get
 
-# 3. Générer les classes Freezed
+# 3. Générer le code immuable Freezed
 dart run build_runner build --delete-conflicting-outputs
 
-# 4. Vérifier la qualité du code (0 erreurs exigées)
+# 4. Lancer l'analyse de qualité (0 avertissement garanti)
 flutter analyze
 
-# 5. Exécuter la suite de tests unitaires et widgets
+# 5. Exécuter les tests unitaires et widgets
 flutter test
 
-# 6. Lancer l'application
+# 6. Démarrer l'application sur émulateur ou mobile
 flutter run
 ```
 
 ---
 
-## 🧪 6. Tests & Assurance Qualité
-
-Le projet intègre des tests de régression automatisés dans `test/widget_test.dart` validant :
-* L'initialisation du `ScreenUtilInit` et la cohérence des contraintes de disposition.
-* Le rendu de la page d'exploration de conciergerie et du catalogue sans aucun dépassement (`RenderFlex overflow`).
-* L'absence totale d'avertissements de linting (`flutter analyze` -> `No issues found!`).
-
----
-
 <p align="center">
-  Développé avec rigueur et passion pour l'écosystème de mobilité d'exception en Tunisie 🇹🇳.
+  <strong>AutoLoc — L'Excellence de la Mobilité de Prestige en Tunisie</strong> 🇹🇳<br />
+  <em>Conçu et développé avec rigueur professionnelle, passion et respect des plus hauts standards d'ingénierie logicielle.</em>
 </p>
