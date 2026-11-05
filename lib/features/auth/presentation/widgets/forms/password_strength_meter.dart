@@ -79,25 +79,31 @@ class PasswordStrengthMeter extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    score >= 3 ? Icons.check_circle_rounded : Icons.info_outline_rounded,
-                    size: 13.sp,
-                    color: _activeColor,
-                  ),
-                  4.horizontalSpace,
-                  Text(
-                    _strengthLabel,
-                    style: AppTypography.labelSm.copyWith(
+              Flexible(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      score >= 3 ? Icons.check_circle_rounded : Icons.info_outline_rounded,
+                      size: 13.sp,
                       color: _activeColor,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 10.sp,
                     ),
-                  ),
-                ],
+                    4.horizontalSpace,
+                    Flexible(
+                      child: Text(
+                        _strengthLabel,
+                        style: AppTypography.labelSm.copyWith(
+                          color: _activeColor,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 10.sp,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
               ),
+              8.horizontalSpace,
               Flexible(
                 child: Text(
                   '8+ car. • 1 chiffre • 1 majuscule',
@@ -106,6 +112,7 @@ class PasswordStrengthMeter extends StatelessWidget {
                     fontSize: 9.sp,
                   ),
                   overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.right,
                 ),
               ),
             ],

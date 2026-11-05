@@ -61,11 +61,14 @@ class LoginForm extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                VipCheckbox(
-                  value: state.rememberDevice,
-                  label: 'Mémoriser ce terminal VIP',
-                  onChanged: cubit.toggleRememberDevice,
+                Expanded(
+                  child: VipCheckbox(
+                    value: state.rememberDevice,
+                    label: 'Mémoriser ce terminal VIP',
+                    onChanged: cubit.toggleRememberDevice,
+                  ),
                 ),
+                8.horizontalSpace,
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
                   decoration: BoxDecoration(

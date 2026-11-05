@@ -158,27 +158,33 @@ class _StepTrackerBar extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                Container(
-                  width: 7.w,
-                  height: 7.w,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFFEC325),
-                    shape: BoxShape.circle,
+            Expanded(
+              child: Row(
+                children: [
+                  Container(
+                    width: 7.w,
+                    height: 7.w,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFFEC325),
+                      shape: BoxShape.circle,
+                    ),
                   ),
-                ),
-                6.horizontalSpace,
-                Text(
-                  'Étape 1 sur 2 : Identité & Contact Tunisien',
-                  style: AppTypography.labelSm.copyWith(
-                    color: Colors.white.withValues(alpha: 0.85),
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w600,
+                  6.horizontalSpace,
+                  Flexible(
+                    child: Text(
+                      'Étape 1 sur 2 : Identité & Contact',
+                      style: AppTypography.labelSm.copyWith(
+                        color: Colors.white.withValues(alpha: 0.85),
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
+            8.horizontalSpace,
             Text(
               '50% Complété',
               style: AppTypography.labelSm.copyWith(

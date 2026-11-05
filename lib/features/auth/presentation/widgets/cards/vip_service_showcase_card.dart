@@ -31,21 +31,27 @@ class VipServiceShowcaseCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      const VipSvgIcon('plane_arrival', size: 18, color: Color(0xFFFEC325)),
-                      6.horizontalSpace,
-                      Text(
-                        'SERVICE MEET & GREET TUNIS-CARTHAGE',
-                        style: AppTypography.labelSm.copyWith(
-                          color: const Color(0xFFFEC325),
-                          fontWeight: FontWeight.w800,
-                          fontSize: 10.sp,
-                          letterSpacing: 0.8,
+                  Expanded(
+                    child: Row(
+                      children: [
+                        const VipSvgIcon('plane_arrival', size: 18, color: Color(0xFFFEC325)),
+                        6.horizontalSpace,
+                        Flexible(
+                          child: Text(
+                            'SERVICE MEET & GREET CARTHAGE',
+                            style: AppTypography.labelSm.copyWith(
+                              color: const Color(0xFFFEC325),
+                              fontWeight: FontWeight.w800,
+                              fontSize: 10.sp,
+                              letterSpacing: 0.8,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
+                  8.horizontalSpace,
                   Text(
                     '24/7 Disponible',
                     style: AppTypography.labelSm.copyWith(
