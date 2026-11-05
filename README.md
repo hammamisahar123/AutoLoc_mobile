@@ -72,9 +72,9 @@ En Tunisie, la location de voitures traditionnelle souffre de points de friction
 Un accueil visuel haut de gamme en **Midnight Navy** et **Or Moutarde**. L'utilisateur choisit entre compte **Particulier** et **VIP Business** avec contrôle de robustesse du mot de passe en temps réel et sélection de la langue (**Français, Anglais, Arabe**).
 
 <p align="center">
-  <img src="docs/screenshots/01_inscription_vip.png" alt="Inscription VIP AutoLoc" width="310" />
+  <img src="docs/screenshots/01_connexion_vip.png" alt="Connexion VIP AutoLoc" width="310" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/screenshots/02_validation_vip.png" alt="Validation VIP Formulaire" width="310" />
+  <img src="docs/screenshots/02_inscription_vip.png" alt="Inscription VIP AutoLoc" width="310" />
 </p>
 
 * **Bascule instantanée** : Connexion simplifiée (e-mail, mot de passe avec affichage sécurisé, Face ID / Tarmac Pass).
